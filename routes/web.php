@@ -12,9 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    
+    $tasks = DB::table('hejsan')->get();
+    
 
-Route::get('/about', function () {
-    return view('welcome');
+    
+    return view('welcome', compact('tasks'));
 });
