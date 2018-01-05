@@ -15,7 +15,7 @@ class CreateImgAdsTable extends Migration
     {
         Schema::create('img_ads', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('ad_id');
+            $table->integer('ad_id')->unsigned();
             $table->string('img');
             $table->timestamps();
         });

@@ -15,8 +15,8 @@ class CreateOrderAdsTable extends Migration
     {
         Schema::create('order_ads', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('order_id');
-            $table->integer('ad_id');
+            $table->integer('order_id')->unsigned();
+            $table->integer('ad_id')->unsigned();
             $table->integer('price');
             $table->timestamps();
         });

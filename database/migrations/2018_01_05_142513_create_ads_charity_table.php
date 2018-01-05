@@ -15,8 +15,8 @@ class CreateAdsCharityTable extends Migration
     {
         Schema::create('ads_charity', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('ad_id');
-            $table->integer('charity_id');
+            $table->integer('ad_id')->unsigned();
+            $table->integer('charity_id')->unsigned();
             $table->integer('sum');
             $table->timestamps();
         });
