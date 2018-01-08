@@ -17,9 +17,15 @@ class CreateAdsTable extends Migration
             $table->increments('id');
             $table->string('title', 100);
             $table->integer('price');
-            $table->text('description');
+            $table->string('brand');
+            $table->string('type');
+            $table->string('size');
+            $table->string('color');
+            $table->string('material');
+            $table->string('condition');
+            $table->string('other');
             $table->string('thumb');
-            $table->integer('active');
+            $table->boolean('active')->default(true);
             $table->text('keywords');
             $table->timestamps();
         });

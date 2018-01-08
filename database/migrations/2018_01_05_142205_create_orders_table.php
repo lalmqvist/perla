@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->integer('seller_id')->unsigned();
             $table->string('payment');
             $table->string('delivery');
-            $table->boolean('status');
+            $table->boolean('completed')->default(false);
             $table->string('phone');
             $table->string('email');
             $table->string('fname');

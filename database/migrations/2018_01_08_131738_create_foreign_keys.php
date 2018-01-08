@@ -23,7 +23,7 @@ class CreateForeignKeys extends Migration
         Schema::table('ads_charity', function (Blueprint $table) {
                     
             $table->foreign('ad_id')->references('id')->on('ads')->onDelete('cascade');
-            $table->foreign('charity_id')->references('id')->on('charity')->onDelete('cascade');
+            $table->foreign('charity_id')->references('id')->on('charities')->onDelete('cascade');
         });
 
         Schema::table('img_ads', function (Blueprint $table) {

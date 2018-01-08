@@ -19,3 +19,15 @@ Route::get('/', function () {
     
     return view('welcome', compact('tasks'));
 });
+
+Route::get('/users', function () {
+    
+    $users = App\User::all();
+    
+
+    
+    return view('users', compact('users'));
+});
+
+Route::get('/ads', 'AdsController@index');
+Route::get('/ads/{ad}', 'AdsController@show');
