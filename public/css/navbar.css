@@ -1,0 +1,83 @@
+body {
+    min-height: 75rem;
+    /* transition: all 0.3s; */
+    /* padding-top: 4.5rem; */
+  }
+
+
+  @font-face {
+    font-family: 'perla';
+    src: url('../font/perla.eot?98307331');
+    src: url('../font/perla.eot?98307331#iefix') format('embedded-opentype'),
+         url('../font/perla.woff2?98307331') format('woff2'),
+         url('../font/perla.woff?98307331') format('woff'),
+         url('../font/perla.ttf?98307331') format('truetype'),
+         url('../font/perla.svg?98307331#perla') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .icons {
+      font-family: 'perla';
+  }
+
+  .navbar-light .navbar-toggler {
+    color: rgba(0,0,0,.7);
+    border-color: transparent;
+
+  }
+
+  .navbar-toggler {
+    font-size: 1.7rem;
+  }
+  button#dropdown-search {
+    font-size: 1.2rem;
+  }
+  
+
+
+  button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .btn.focus, .btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .navbar-toggler:focus, .navbar-toggler:hover {
+    outline: none;
+}
+
+  .navbar-brand {
+    margin-right: auto;
+  }
+
+  #dropdown-search-menu {
+    position: relative;
+    margin-top: 0;
+    margin-left: 0.125rem;
+    z-index: 1000;
+    float: left;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: none;
+}
+
+#collapseSearchField .card-body {
+
+    padding: 1rem;
+}
+
+#collapseSearchField .card {
+    border: none;
+}
+
+nav#navbar-second .nav-link {
+    font-family: 'Patrick Hand SC', cursive;
+}

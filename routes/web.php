@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     
-    $tasks = DB::table('hejsan')->get();
+    
     
 
     

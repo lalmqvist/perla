@@ -4,20 +4,25 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC|Yanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/css/stylesheet.css">
+
     <title>Perla - Your own charity shop</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    @include('layouts.nav')
+    @include('layouts.nav-second')
 
     <div id="container">
         @yield('content')
         </div>
     
-        @yield('footer')
+        @include('layouts.footer')
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -27,3 +32,4 @@
   </body>
 </html>
 
+ 
