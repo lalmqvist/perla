@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Field extends Model
 {
-    //
+    public function charities() 
+    {
+    //    $field->charities;
+        $this->hasMany(Charities::class);
+
+    }
 }

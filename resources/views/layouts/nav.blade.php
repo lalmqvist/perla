@@ -4,7 +4,7 @@
 {{--  Navbar first - start  --}}
 <nav class="navbar navbar-light sticky-top bg-light" id="navbar-first" style="background-color: #F4F6F8;">
     
-    <a class="navbar-brand" href="#"><img style="width: 130px" src="../img/logo/logo_grey.png" alt=""></a>
+    <a class="navbar-brand" href="/"><img style="width: 130px" src="../img/logo/logo_grey.png" alt=""></a>
    
 
 
@@ -41,7 +41,7 @@
           <div class="dropdown-divider"></div>
 
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KATEGORIER</a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KATEGORIER</a>
             <div class="dropdown-menu" aria-labelledby="dropdown10">
               <a class="dropdown-item" href="#">Kläder & Accessoarer</a>
               <a class="dropdown-item" href="#">Hem & Design</a>
@@ -51,12 +51,14 @@
           </li>
 
           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VÄLGÖRENHET</a>
+              <a class="nav-link dropdown-toggle" href="/charities" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VÄLGÖRENHET</a>
               <div class="dropdown-menu" aria-labelledby="dropdown10">
-                <a class="dropdown-item" href="#">Kläder & Accessoarer</a>
-                <a class="dropdown-item" href="#">Hem & Design</a>
-                <a class="dropdown-item" href="#">Hobbysaker</a>
-                <a class="dropdown-item" href="#">Elektronik</a>
+                <a class="dropdown-item" href="/charities/1">Miljö & Natur</a>
+                <a class="dropdown-item" href="/charities/3">Barn & Unga</a>
+                <a class="dropdown-item" href="/charities/5">Forskning</a>
+                <a class="dropdown-item" href="/charities/2">Mänskliga rättigheter</a>
+                <a class="dropdown-item" href="/charities/4">Djur</a>
+                <a class="dropdown-item" href="/charities/6">Vård & Hälsa</a>
               </div>
             </li>
 

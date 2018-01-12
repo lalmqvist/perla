@@ -32,23 +32,6 @@ class CharitiesController extends Controller
 
         $charities = Charities::whereIn('id', $idArray)->get();
 
-        
-
-        // return $charities;
-        // $charitiesList = [];
-        // foreach ($charities_id as $key => $charity) {
-        //     $charitiesList[] = Charities::where('id', $charity->id)->get();
-
-        // }
-        // echo '<br><pre>';
-        // var_dump($charitiesList[0]);
-
-        // $charities = $charitiesList[0];
-        // foreach ($charities as $key => $value) {
-        //     echo '<br><br>Nummer ' . $key . '<br><pre>';
-        //     var_dump($value);
-        // }
-        // return $charities;
         return view('charities.show-field', compact('charities', 'fieldName'));
     
     }
