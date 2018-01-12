@@ -1,12 +1,12 @@
 body {
     margin: 0;
-    font-family: font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 1rem;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
     font-weight: 300;
-    line-height: 1.5;
-    color: #212529;
-    text-align: left;
-    background-color: #fff;
+    font-size: 1.1rem;
+}
+
+.container {
+    margin-top: 50px;
 }
 
 h1 {
@@ -17,4 +17,8 @@ h1 {
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     font-family: 'Yanone Kaffeesatz', sans-serif;
 
+}
+
+a {
+    color: #60B8CC;
 }

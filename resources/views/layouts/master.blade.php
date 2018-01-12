@@ -18,9 +18,9 @@
     @include('layouts.nav')
     @include('layouts.nav-second')
 
-    <div id="container">
+    <main role="main" class="container">
         @yield('content')
-        </div>
+    </main>
     
         @include('layouts.footer')
 

@@ -31,3 +31,8 @@ Route::get('/users', function () {
 
 Route::get('/ads', 'AdsController@index');
 Route::get('/ads/{ad}', 'AdsController@show');
+
+Route::get('/charities', 'CharitiesController@index');
+Route::get('/charities/{field}', 'CharitiesController@showField');
+Route::get('/charities/{field}/ads', 'CharitiesController@showAdsInField');
+Route::get('/charities/{charities}', 'CharitiesController@showCharity');
