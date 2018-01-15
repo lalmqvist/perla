@@ -9,10 +9,10 @@
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KATEGORIER</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown10">
                   <a class="dropdown-item" href="/categories">Alla Kategorier</a>
-                  <a class="dropdown-item" href="/categories/{1}">Kläder & Accessoarer</a>
-                  <a class="dropdown-item" href="/categories/{2}">Hem & Design</a>
-                  <a class="dropdown-item" href="/categories/{3}">Hobbysaker</a>
-                  <a class="dropdown-item" href="/categories/{4}">Elektronik</a>
+                  <a class="dropdown-item" href="/categories/1">Kläder & Accessoarer</a>
+                  <a class="dropdown-item" href="/categories/2">Hem & Design</a>
+                  <a class="dropdown-item" href="/categories/3">Hobbysaker</a>
+                  <a class="dropdown-item" href="/categories/4">Elektronik</a>
                 </div>
               </li>
 

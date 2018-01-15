@@ -21,4 +21,10 @@ class AdsController extends Controller
         return view('ads.show', compact('ad'));
     
     }
+    
+    public function showCategory()
+    {
+        
+    }
+
 }

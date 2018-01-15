@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+use App\Categories;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,12 +41,18 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \App\Categories  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Categories $categories)
     {
-        //
+        $categoryName = $categories->name;
+
+        $ads = $categories->ads;
+
+        return view('ads.index', compact('ads', 'categoryName'));
+    
+    
     }
 
     /**

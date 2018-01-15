@@ -5,7 +5,11 @@
 
 
     
+@if (isset($categoryName))
 
+<h1>{{ $categoryName }}</h1>
+
+@endif
 
     
 

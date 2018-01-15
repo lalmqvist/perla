@@ -8,6 +8,6 @@ class Categories extends Model
 {
     public function ads()
     {
-        return $this->belongsToMany('App\Categories', 'ads_category', 'category_id', 'ad_id');
+        return $this->belongsToMany('App\Ad', 'ads_category', 'category_id', 'ad_id');
     }
 }

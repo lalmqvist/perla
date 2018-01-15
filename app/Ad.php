@@ -16,10 +16,10 @@ class Ad extends Model
         return $this->belongsTo('App\Order');
     }
 
-    public function categories()
-    {
-        return $this->belongsToMany('App\Categories', 'ads_category', 'ad_id', 'category_id');
-    }
+    // public function categories()
+    // {
+    //     return $this->belongsToMany('App\Categories', 'ads_category', 'ad_id', 'category_id');
+    // }
 
     public function charities()
     {
