@@ -13,7 +13,6 @@ class CharitiesController extends Controller
     {
         $fields= Field::all();
 
-        // return $fields;
         return view('charities.index', compact('fields'));
     }
 
@@ -21,16 +20,7 @@ class CharitiesController extends Controller
     {
         $fieldName = $field->name;
 
-        $charities_id = Charity_field::where('field_id', $field->id)->select('charity_id')->get();
-
-        $idArray = [];
-
-        foreach ($charities_id as $key => $charity) {
-            $idArray[] = $charity->charity_id;
-
-        }
-
-        $charities = Charities::whereIn('id', $idArray)->get();
+        $charities = $field->charities;
 
         return view('charities.show-field', compact('charities', 'fieldName'));
     

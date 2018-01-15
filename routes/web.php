@@ -30,6 +30,7 @@ Route::get('/users', function () {
 });
 
 Route::get('/ads', 'AdsController@index');
+Route::get('/ads/{category}', 'AdsController@showCategory');
 Route::get('/ads/{ad}', 'AdsController@show');
 
 Route::get('/charities', 'CharitiesController@index');
