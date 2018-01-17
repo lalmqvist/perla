@@ -18,13 +18,21 @@ class AdsController extends Controller
     public function show(Ad $ad)
     {
 
+        // $images=$ad->images;
+        // foreach ($images as $key => $img) {
+        //     echo $img->img;
+        // }
+
+        // dd($ad->images[0]->img);
+        // var_dump($ad);
+        // dd($ad = Ad::find($ad));
         return view('ads.show', compact('ad'));
     
     }
     
     public function showCategory()
     {
-        
+
     }
 
 }

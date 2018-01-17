@@ -14,10 +14,10 @@
 Route::get('/', function () {
     
     
-    
+    $latestAds = App\Ad::latest()->limit(8)->get();
 
     
-    return view('welcome', compact('tasks'));
+    return view('welcome', compact('latestAds'));
 });
 
 Route::get('/users', function () {
@@ -30,12 +30,13 @@ Route::get('/users', function () {
 });
 
 Route::get('/ads', 'AdsController@index');
-Route::get('/ads/{category}', 'AdsController@showCategory');
 Route::get('/ads/{ad}', 'AdsController@show');
+
+Route::get('/categories/{categories}', 'CategoriesController@show');
 
 Route::get('/charities', 'CharitiesController@index');
 Route::get('/charities/{field}', 'CharitiesController@showField');
 Route::get('/charities/{field}/ads', 'CharitiesController@showAdsInField');
-Route::get('/charities/{charities}', 'CharitiesController@showCharity');
+Route::get('/charities/charity/{charities}', 'CharitiesController@showCharity');
 
 Route::get('/categories/{categories}', 'CategoriesController@show');

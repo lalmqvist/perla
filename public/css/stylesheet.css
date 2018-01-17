@@ -1,3 +1,32 @@
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #868e96;
+    --gray-dark: #343a40;
+    --primary: #EA5273;
+    --secondary: #868e96;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+  }
+
 body {
     margin: 0;
     font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -5,8 +34,16 @@ body {
     font-size: 1.1rem;
 }
 
-.container {
+main.container {
     margin-top: 50px;
+}
+
+/* .container {
+    margin-top: 50px;
+} */
+
+#img_container {
+    margin-top: 0px!Important;
 }
 
 h1 {
@@ -19,6 +56,114 @@ h1 {
 
 }
 
+h2.ad-title {
+    margin-top: 60px;
+}
+
+p.ad-info {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 a {
     color: #60B8CC;
+}
+
+img.small-img {
+    width: 100%;
+    margin-top: 20px;
+}
+
+img#large-img {
+    width: 100%;
+}
+
+.fullScreen {
+    /* display: flex; */
+    display: none;
+    
+    text-align: center;
+    justify-content: center;
+    z-index: 30000;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    right: 350px;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+    
+    /* display: none; */
+}
+
+p#close-carousel {
+    color: #ffffff;
+    z-index: 30001;
+    position: absolute;
+    top: 5px;
+    right: auto;
+    left: 50%;
+    font-size: 2.0rem;
+    font-weight: 300;
+}
+
+div.fullScreen div.carousel-inner {
+    margin-top: 8%;
+} 
+
+.btn-custom {
+    margin-top: 20px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #EA5273;
+    border-color: #EA5273;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    color: #fff;
+    background-color: #EA5273;
+    border-color: #EA5273;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #EA5273;
+    border-color: #EA5273;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-outline-primary {
+    color: #EA5273;
+    background-color: transparent;
+    background-image: none;
+    border-color: #EA5273;
+    outline: none;
+}
+
+.btn-outline-primary:not([disabled]):not(.disabled).active, .btn-outline-primary:not([disabled]):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
+    text-decoration: none;
+    color: #EA5273;
+    background-color: transparent;
+    border-color: #EA5273;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-outline-primary:hover {
+    text-decoration: none;
+    color: #EA5273;
+    background-color: transparent;
+    border-color: #EA5273;
+    box-shadow: none;
+}
+
+#wish-button .icons {
+    font-family: 'perla';
+    margin-right: 5px;
 }
