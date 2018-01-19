@@ -18,7 +18,7 @@
 		<div class="card-body">
                 <h5 class="card-title">{{ $ad->title }}</h5>
                 <h5 class="card-title">{{ $ad->price }} kr</h5>
-                <p class="card-text">{{ $ad->brand }}<br></p>
+                {{--  <p class="card-text">{{ $ad->brand }}<br></p>  --}}
                 <a href="/addtocart/{{ $ad->id }}" class="btn btn-primary btn-block">Lägg i kundvagn</a>
             </div>
         </div>

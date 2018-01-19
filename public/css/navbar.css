@@ -4,6 +4,10 @@ body {
     /* padding-top: 4.5rem; */
   }
 
+  .bg-light {
+    background-color: #ffebf4!important;
+}
+
 
   @font-face {
     font-family: 'perla';
