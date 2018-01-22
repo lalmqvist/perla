@@ -28,31 +28,7 @@
                 <a class="dropdown-item" href="/charities/6">Vård & Hälsa</a>
                 </div>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOGGA IN</a>
-                <div class="dropdown-menu">
-                    <form class="px-4 py-3">
-                      <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleDropdownFormPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-                      </div>
-                      <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                        <label class="form-check-label" for="dropdownCheck">
-                          Remember me
-                        </label>
-                      </div>
-                      <button type="submit" class="btn btn-primary">Sign in</button>
-                    </form>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">New around here? Sign up</a>
-                    <a class="dropdown-item" href="#">Forgot password?</a>
-                </div>
-            </li>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KUNDVAGN</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown10">
@@ -62,6 +38,59 @@
                   <a class="dropdown-item" href="#">Elektronik</a>
                 </div>
             </li>
+                @auth
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="{{ url('/home') }}" id="dropdown-mypages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MINA SIDOR</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown-mypages">
+                      <a class="dropdown-item" href="#">Mina sidor</a>
+                      <a class="dropdown-item" href="#">Mina annonser</a>
+                      <a class="dropdown-item" href="#">Skapa en annons</a>
+                      <a class="dropdown-item" href="#">Mina ordrar</a>
+                      <a class="dropdown-item" href="{{ route('logout') }}"
+                      onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">Logga ut {{ Auth::user()->fname }}</a>
+                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  {{ csrf_field() }}
+                              </form>
+                    </div>
+
+                
+                </li>
+            @else
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('login') }}">LOGGA IN</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('register') }}">REGISTRERA DIG</a>
+            </li>
+            @endauth
+{{--  
+            @guest
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                    {{ Auth::user()->fname }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endguest  --}}
+                
+            
 
         </ul>
       </div>

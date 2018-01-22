@@ -1,0 +1,28 @@
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+
+div.marketing {
+    margin-top: 75px;
+}
+
+.marketing .col-lg-3 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .marketing h3 {
+    font-weight: 300;
+  }
+  .marketing .col-lg-3 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+  }
+
+  img.rounded-circle {
+    width: 200; 
+    height:200;
+  }

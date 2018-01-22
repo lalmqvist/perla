@@ -32,10 +32,39 @@
     
     <div class="collapse navbar-collapse justify-content-md-center" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
+
+          <div class="dropdown-divider"></div>
+          @auth
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="{{ url('/home') }}" id="dropdown-mypages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MINA SIDOR</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown-mypages">
+                      <a class="dropdown-item" href="#">Mina sidor</a>
+                      <a class="dropdown-item" href="#">Mina annonser</a>
+                      <a class="dropdown-item" href="#">Skapa en annons</a>
+                      <a class="dropdown-item" href="#">Mina ordrar</a>
+                      <a class="dropdown-item" href="{{ route('logout') }}"
+                      onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">Logga ut {{ Auth::user()->fname }}</a>
+                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  {{ csrf_field() }}
+                              </form>
+                    </div>
+
+                
+                </li>
+            @else
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('login') }}">LOGGA IN</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('register') }}">REGISTRERA DIG</a>
+            </li>
+            @endauth
+
           
         <div class="dropdown-divider"></div>
         <li class="nav-item">
-              <a class="nav-link" href="#">KUNDVAGN<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">KUNDVAGN</a>
           </li>
 
           <div class="dropdown-divider"></div>
@@ -64,14 +93,6 @@
 
         <li class="nav-item">
             <a class="nav-link" href="#">KONTAKT<span class="sr-only">(current)</span></a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="#">LOGGA IN<span class="sr-only">(current)</span></a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="#">LÄGG IN EN EGEN ANNONS<span class="sr-only">(current)</span></a>
         </li>
 
         <li class="nav-item">

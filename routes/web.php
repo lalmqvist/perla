@@ -40,3 +40,7 @@ Route::get('/charities/{field}/ads', 'CharitiesController@showAdsInField');
 Route::get('/charities/charity/{charities}', 'CharitiesController@showCharity');
 
 Route::get('/categories/{categories}', 'CategoriesController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
