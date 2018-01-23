@@ -44,3 +44,8 @@ Route::get('/categories/{categories}', 'CategoriesController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/cart', 'CartController@showCart');
+Route::get('/addtocart/{ad}', 'CartController@addToCart');
+Route::get('/emptycart', 'CartController@emptyCart');
+

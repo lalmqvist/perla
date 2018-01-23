@@ -49,8 +49,8 @@
             @if (strlen($ad->other) >= 1)
                 <p class="ad-info"><b>Övrigt:</b> {{$ad->other}}</p>
             @endif
-            <a href="#"><button class="btn btn-primary btn-lg btn-block btn-custom">Lägg i kundvagn</button></a>    
-            <a href="#"><button id="wish-button" class="btn btn-outline-primary btn-lg btn-block btn-custom"><span class="icons">e</span>  Spara som favorit</button></a>    
+            <a href="/addtocart/{{ $ad->id }}"><button class="btn btn-primary btn-lg btn-block btn-custom">Lägg i kundvagn</button></a>    
+            <a href="/addtowishlist/{{ $ad->id }}"><button id="wish-button" class="btn btn-outline-primary btn-lg btn-block btn-custom"><span class="icons">e</span>  Spara som favorit</button></a>    
         </div>
         </div>
       </div>

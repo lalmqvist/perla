@@ -27,7 +27,7 @@
             <h5 class="card-title">{{ $ad->price }} kr</h5>
             <p class="card-text">{{ $ad->brand }}<br></p>
             <a href="/addtocart/{{ $ad->id }}" class="btn btn-primary">Lägg i kundvagn</a>
-            <a href="#"><button class="wish-button-index btn btn-outline-primary"><span class="icons">e</span>  Spara som favorit</button></a>    
+            <a href="/addtowishlist/{{ $ad->id }}"><button class="wish-button-index btn btn-outline-primary"><span class="icons">e</span>  Spara som favorit</button></a>    
 
         </div>
         </div>
