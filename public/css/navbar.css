@@ -36,9 +36,13 @@ body {
   }
   button#dropdown-search {
     font-size: 1.2rem;
+
   }
   
-
+  button#dropdown-cart {
+    font-size: 1.2rem;
+    background-color: transparent;
+}
 
   button:focus {
     outline: none;
