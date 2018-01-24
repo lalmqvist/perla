@@ -47,5 +47,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/cart', 'CartController@showCart');
 Route::get('/addtocart/{ad}', 'CartController@addToCart');
+Route::get('/removefromcart/{item}', 'CartController@removeFromCart');
 Route::get('/emptycart', 'CartController@emptyCart');
 
