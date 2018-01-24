@@ -23,7 +23,7 @@ class Ad extends Model
 
     public function charities()
     {
-        return $this->belongsToMany('App\Charities', 'ads_charity', 'ad_id', 'charity_id');
+        return $this->belongsToMany('App\Charities', 'ads_charities', 'ad_id', 'charity_id');
     }
 
     public function images()
@@ -31,4 +31,8 @@ class Ad extends Model
         return $this->hasMany('App\Img_ad');
     }
 
+    public function charitySum()
+    {
+        return $this->hasOne('App\Ads_charities');
+    }
 }

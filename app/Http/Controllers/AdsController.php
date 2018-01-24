@@ -18,15 +18,14 @@ class AdsController extends Controller
     public function show(Ad $ad)
     {
 
-        // $images=$ad->images;
-        // foreach ($images as $key => $img) {
-        //     echo $img->img;
-        // }
+        //Hämtar välgörenhetsorganisation
+        foreach ($ad->charities as $charity) {
+            $charityName = $charity->name;
+        }
+        //Hämtar summa som valts till välgörenhetsorganisation
+        $charitySum = $ad->charitySum->sum;
 
-        // dd($ad->images[0]->img);
-        // var_dump($ad);
-        // dd($ad = Ad::find($ad));
-        return view('ads.show', compact('ad'));
+        return view('ads.show', compact('ad', 'charitySum', 'charityName'));
     
     }
     

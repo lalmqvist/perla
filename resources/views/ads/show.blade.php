@@ -24,7 +24,7 @@
           <div class="col-5">
             <h2 class="ad-title">{{$ad->title}}</h2>
             <h2 class="ad-price">{{$ad->price}} kr</h2>
-            <h5>30% av summan går till <a href="#">Rädda Barnen</a></h5>
+            <h5>{{$ad->charitySum->sum}}% av summan går till <a href="#">Rädda Barnen</a></h5>
             <p>Säljare: <a href="#">lalmqvist</a></p>
             
             @if (strlen($ad->brand) >= 1)

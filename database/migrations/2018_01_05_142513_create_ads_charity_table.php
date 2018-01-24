@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdsCharityTable extends Migration
+class CreateAdsCharitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAdsCharityTable extends Migration
      */
     public function up()
     {
-        Schema::create('ads_charity', function (Blueprint $table) {
+        Schema::create('ads_charities', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('ad_id')->unsigned();
             $table->integer('charity_id')->unsigned();
@@ -30,5 +30,6 @@ class CreateAdsCharityTable extends Migration
     public function down()
     {
         Schema::dropIfExists('ads_charity');
+        Schema::dropIfExists('ads_charities');
     }
 }
