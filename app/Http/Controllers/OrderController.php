@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Ad;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use LukePOLO\LaraCart\LaraCartServiceProvider;
+use LukePOLO\LaraCart\Facades\LaraCart;
 
 class OrderController extends Controller
 {
@@ -35,7 +40,38 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Order::create([
+            'user_id' => Auth::user()->id,
+            'fname' => $request->input('fname'),
+            'lname' => $request->input('lname'),
+            'payment' => $request->input('payment'),
+            'phone' => $request->input('phone'),
+            'email' => $request->input('email'),
+            'street1' => $request->input('street1'),
+            'street2' => $request->input('street2'),
+            'zip' => $request->input('zip'),
+            'city' => $request->input('city'),
+            
+        ]);
+        $order = Order::latest()->first();
+
+        foreach ($cartItems = LaraCart::getItems() as $item) {
+
+            $order->ads()->create([
+                'order_id' => $order->id,
+                'ad_id' => $item->id,
+                'price' => $item->price,
+            ]);
+
+            Ad::where('id', $item->id)
+            ->update(['active' => false]);
+
+            }
+
+            LaraCart::emptyCart();
+            return redirect()->route('home')->with('status', 'Tack för din order!');
+
     }
 
     /**

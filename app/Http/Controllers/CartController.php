@@ -24,14 +24,20 @@ class CartController extends Controller
     public function addToCart(Ad $ad, Request $request)
     {
     
-        
+        //Hämtar välgörenhetsorganisation
+        foreach ($ad->charities as $charity) {
+            $charityName = $charity->name;
+            $charityId = $charity->id;
+        }
+        //Hämtar summa som valts till välgörenhetsorganisation
+        $charitySum = $ad->charitySum->sum;
 
         LaraCart::add(
             $itemID = $ad->id,
             $name = $ad->title,
             $qty = 1,
             $price = $ad->price,
-            $options = ['thumb' => $ad->thumb, 'gift' =>  ],
+            $options = ['thumb' => $ad->thumb, 'charity' => $charityName, 'charitysum' => $charitySum, 'charity_id' => $charityId],
             $taxable = false,
             $lineItem = false
         );
@@ -54,6 +60,20 @@ class CartController extends Controller
     public function checkOut() 
     {
 
+    }
+
+    public static function giftSum() 
+    {
+        $cartItems = LaraCart::getItems();
+        $sum = 0;
+        foreach ($cartItems as $item) {
+            //Räkna ut procent av priset
+            $percent = $item->charitysum * 0.01;
+            $productSum = $item->price * $percent;
+
+            $sum = $sum + $productSum;
+        }
+        return $sum;
     }
 
 

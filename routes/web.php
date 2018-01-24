@@ -50,3 +50,6 @@ Route::get('/addtocart/{ad}', 'CartController@addToCart');
 Route::get('/removefromcart/{item}', 'CartController@removeFromCart');
 Route::get('/emptycart', 'CartController@emptyCart');
 
+
+Route::post('/order', 'OrderController@store');
+

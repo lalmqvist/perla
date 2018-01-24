@@ -60,10 +60,11 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KATEGORIER</a>
             <div class="dropdown-menu" aria-labelledby="dropdown10">
-              <a class="dropdown-item" href="#">Kläder & Accessoarer</a>
-              <a class="dropdown-item" href="#">Hem & Design</a>
-              <a class="dropdown-item" href="#">Hobbysaker</a>
-              <a class="dropdown-item" href="#">Elektronik</a>
+                    <a class="dropdown-item" href="/ads">Alla Kategorier</a>
+                    <a class="dropdown-item" href="/categories/1">Kläder & Accessoarer</a>
+                    <a class="dropdown-item" href="/categories/2">Hem & Design</a>
+                    <a class="dropdown-item" href="/categories/3">Hobbysaker</a>
+                    <a class="dropdown-item" href="/categories/4">Elektronik</a>
             </div>
           </li>
 
