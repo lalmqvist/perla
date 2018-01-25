@@ -50,6 +50,26 @@ Route::get('/addtocart/{ad}', 'CartController@addToCart');
 Route::get('/removefromcart/{item}', 'CartController@removeFromCart');
 Route::get('/emptycart', 'CartController@emptyCart');
 
-
+//Sparar en order
 Route::post('/order', 'OrderController@store');
 
+//My pages - Kontakt
+// Visar formulär med kontaktuppgifter
+Route::get('/mypages/contacts', 'UserController@edit')->middleware('auth');
+//Sparar ändringar gjorda i kontakten
+Route::post('/mypages/contacts', 'UserController@update')->middleware('auth');
+
+//My pages - annonser
+//Visar en users annonser
+Route::get('/mypages/ads', 'AdsController@showUser')->middleware('auth');
+//Visar formulär för att uppdatera annons
+Route::get('/mypages/ads/{ad}', 'AdsController@edit')->middleware('auth');
+//Sparar ändringar gjorda i annons
+Route::post('/mypages/ads/{ad}', 'AdsController@update')->middleware('auth');
+
+//My pages - skapa ny annons
+Route::get('/mypages/newad', 'AdsController@create')->middleware('auth');
+Route::post('/mypages/newad', 'AdsController@store')->middleware('auth');
+
+// My pages - visa ordrar
+Route::get('/mypages/orders', 'OrderController@index')->middleware('auth');

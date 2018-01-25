@@ -18,14 +18,14 @@ class CreateOrdersTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('seller_id')->unsigned();
             $table->string('payment');
-            $table->string('delivery');
+            $table->string('delivery')->nullable($value = true);
             $table->boolean('completed')->default(false);
             $table->string('phone');
             $table->string('email');
             $table->string('fname');
             $table->string('lname');
             $table->string('street1');
-            $table->string('street2');
+            $table->string('street2')->nullable($value = true);
             $table->string('zip');
             $table->string('city');
             $table->timestamps();

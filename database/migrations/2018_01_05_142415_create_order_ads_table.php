@@ -18,6 +18,7 @@ class CreateOrderAdsTable extends Migration
             $table->integer('order_id')->unsigned();
             $table->integer('ad_id')->unsigned();
             $table->integer('price');
+            $table->integer('gift');
             $table->timestamps();
         });
     }

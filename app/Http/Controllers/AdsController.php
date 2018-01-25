@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ad;
+use App\User;
 
 class AdsController extends Controller
 {
@@ -16,6 +17,20 @@ class AdsController extends Controller
     }
 
     public function show(Ad $ad)
+    {
+
+        //Hämtar välgörenhetsorganisation
+        foreach ($ad->charities as $charity) {
+            $charityName = $charity->name;
+        }
+        //Hämtar summa som valts till välgörenhetsorganisation
+        $charitySum = $ad->charitySum->sum;
+
+        return view('ads.show', compact('ad', 'charitySum', 'charityName'));
+    
+    }
+
+    public function showUser(User $user)
     {
 
         //Hämtar välgörenhetsorganisation

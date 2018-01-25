@@ -23,6 +23,12 @@ div.marketing {
   }
 
   img.rounded-circle {
-    width: 200; 
-    height:200;
+    width: 175px;
+    height: 175px;
+    margin-bottom: 10px;
+  }
+
+  h2.mp-h2 {
+    text-align: center;
+    margin-top: 20px;
   }

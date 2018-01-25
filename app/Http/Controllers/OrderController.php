@@ -19,7 +19,24 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $orders = Order::where('user_id', $user->id)->get();
+
+        $orderSum = [];
+        $giftSum = [];
+        
+        foreach ($orders as $order) {
+            $orderSum[$order->id] = 0;
+            $giftSum[$order->id] = 0;
+            $ads = $order->order_ads;
+            
+            foreach ($ads as $ad) {
+                $orderSum[$order->id] = $orderSum[$order->id] + $ad->price;
+                $giftSum[$order->id] = $giftSum[$order->id] + $ad->gift;
+
+            }
+        }
+        return view('home.orders', compact('orders', 'orderSum', 'giftSum'));
     }
 
     /**
@@ -58,10 +75,11 @@ class OrderController extends Controller
 
         foreach ($cartItems = LaraCart::getItems() as $item) {
 
-            $order->ads()->create([
+            $order->order_ads()->create([
                 'order_id' => $order->id,
                 'ad_id' => $item->id,
                 'price' => $item->price,
+                'gift' => $item->sum,
             ]);
 
             Ad::where('id', $item->id)

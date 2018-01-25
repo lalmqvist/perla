@@ -17,7 +17,9 @@ class Ad extends Model
 
     public function order()
     {
-        return $this->belongsTo('App\Order');
+        // return $this->belongsTo('App\Order');
+        return $this->belongsToMany('App\Order', 'order_ads', 'ad_id', 'order_id');
+
     }
 
     // public function categories()

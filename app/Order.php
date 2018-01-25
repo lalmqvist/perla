@@ -11,7 +11,14 @@ class Order extends Model
 
     public function ads()
     {
+        return $this->belongsToMany('App\Ad', 'order_ads', 'order_id', 'ad_id');
+
+    }
+
+    public function order_ads()
+    {
         return $this->hasMany('App\Order_ad');
+
     }
 
     public function user()

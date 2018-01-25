@@ -32,12 +32,15 @@ class CartController extends Controller
         //Hämtar summa som valts till välgörenhetsorganisation
         $charitySum = $ad->charitySum->sum;
 
+        $percent = $charitySum * 0.01;
+        $sum = $ad->price * $percent;
+
         LaraCart::add(
             $itemID = $ad->id,
             $name = $ad->title,
             $qty = 1,
             $price = $ad->price,
-            $options = ['thumb' => $ad->thumb, 'charity' => $charityName, 'charitysum' => $charitySum, 'charity_id' => $charityId],
+            $options = ['thumb' => $ad->thumb, 'charity' => $charityName, 'charitysum' => $charitySum, 'sum' => $sum, 'charity_id' => $charityId],
             $taxable = false,
             $lineItem = false
         );
