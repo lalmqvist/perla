@@ -6,7 +6,7 @@
       <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KATEGORIER</a>
+                <a class="nav-link dropdown-toggle" href="/ads" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KATEGORIER</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown10">
                   <a class="dropdown-item" href="/ads">Alla Kategorier</a>
                   <a class="dropdown-item" href="/categories/1">Kläder & Accessoarer</a>
@@ -17,9 +17,9 @@
               </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/charities" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VÄLGÖRENHET</a>
+                <a class="nav-link dropdown-toggle" href="/ads" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VÄLGÖRENHET</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown10">
-                  <a class="dropdown-item" href="/charities">Alla</a>
+                  <a class="dropdown-item" href="/ads">Alla</a>
                   <a class="dropdown-item" href="/charities/1">Miljö & Natur</a>
                 <a class="dropdown-item" href="/charities/3">Barn & Unga</a>
                 <a class="dropdown-item" href="/charities/5">Forskning</a>
@@ -33,10 +33,10 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="{{ url('/home') }}" id="dropdown-mypages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MINA SIDOR</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown-mypages">
-                      <a class="dropdown-item" href="#">Mina sidor</a>
-                      <a class="dropdown-item" href="#">Mina annonser</a>
-                      <a class="dropdown-item" href="#">Skapa en annons</a>
-                      <a class="dropdown-item" href="#">Mina ordrar</a>
+                      <a class="dropdown-item" href="/home">Mina sidor</a>
+                      <a class="dropdown-item" href="/mypages/ads">Mina annonser</a>
+                      <a class="dropdown-item" href="/mypages/newad">Skapa en annons</a>
+                      <a class="dropdown-item" href="/mypages/orders">Mina ordrar</a>
                       <a class="dropdown-item" href="{{ route('logout') }}"
                       onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();">Logga ut {{ Auth::user()->fname }}</a>

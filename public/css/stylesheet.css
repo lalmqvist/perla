@@ -12,7 +12,7 @@
     --white: #fff;
     --gray: #868e96;
     --gray-dark: #343a40;
-    --primary: #EA5273;
+    --primary: #EF909E;
     --secondary: #868e96;
     --success: #28a745;
     --info: #17a2b8;
@@ -126,8 +126,8 @@ div.fullScreen div.carousel-inner {
 
 .btn-primary {
     color: #fff;
-    background-color: #EA5273;
-    border-color: #EA5273;
+    background-color: #EF909E;
+    border-color: #EF909E;
 }
 
 .btn-primary:hover, .btn-primary:focus {

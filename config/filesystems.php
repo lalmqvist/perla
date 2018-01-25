@@ -50,8 +50,22 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'root' => storage_path('img/products'),
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+        ],
+
+        'big_img' => [
+            'driver' => 'local',
+            'root' => storage_path('img/products/large'),
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+        ],
+
+        'thumb' => [
+            'driver' => 'local',
+            'root' => storage_path('img/products/thumb'),
+            'url' => env('APP_URL').'/public',
             'visibility' => 'public',
         ],
 

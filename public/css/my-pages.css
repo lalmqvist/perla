@@ -32,3 +32,18 @@ div.marketing {
     text-align: center;
     margin-top: 20px;
   }
+
+  div#cat-buttons .btn {
+    border-radius: 0;
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-bottom: 5px;
+  }
+
+  .btn-group, .btn-group-vertical {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: middle;
+    margin-top: 20px;
+    margin-bottom: 20px;

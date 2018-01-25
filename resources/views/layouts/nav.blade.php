@@ -26,10 +26,10 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="{{ url('/home') }}" id="dropdown-mypages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MINA SIDOR</a>
                   <div class="dropdown-menu" aria-labelledby="dropdown-mypages">
-                      <a class="dropdown-item" href="#">Mina sidor</a>
-                      <a class="dropdown-item" href="#">Mina annonser</a>
-                      <a class="dropdown-item" href="#">Skapa en annons</a>
-                      <a class="dropdown-item" href="#">Mina ordrar</a>
+                      <a class="dropdown-item" href="/home">Mina sidor</a>
+                      <a class="dropdown-item" href="/mypages/ads">Mina annonser</a>
+                      <a class="dropdown-item" href="/mypages/newad">Skapa en annons</a>
+                      <a class="dropdown-item" href="/mypages/orders">Mina ordrar</a>
                       <a class="dropdown-item" href="{{ route('logout') }}"
                       onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();">Logga ut {{ Auth::user()->fname }}</a>

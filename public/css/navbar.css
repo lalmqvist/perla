@@ -5,7 +5,9 @@ body {
   }
 
   .bg-light {
-    background-color: #ffebf4!important;
+    /* background-color: #ffebf4!important; */
+    background-color:#FCE2E7!important;
+    /* background-color: #ffffff!important; */
 }
 
 

@@ -66,7 +66,7 @@
 
     
         <div class="col-lg-3">
-            <a href="/mypages/create-ad">
+            <a href="/mypages/newad">
                 <img class="rounded-circle" src="../img/symbols/mp_newad.png" alt="Generic placeholder image">
                 <h5>Skapa annons</h5>
             </a>
