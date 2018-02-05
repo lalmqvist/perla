@@ -47,3 +47,15 @@ div.marketing {
     vertical-align: middle;
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  ul .nav-tabs .nav-link {
+    border: 1px solid pink;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+
+  }
+
+  .nav-tabs {
+    border-bottom: 1px solid pink;
+  }

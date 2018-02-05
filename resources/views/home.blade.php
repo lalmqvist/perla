@@ -1,6 +1,7 @@
 @extends('layouts.master')
 <link rel="stylesheet" href="/css/my-pages.css">
 @section('content')
+<div class="container">
 <ul class="nav nav-tabs">
         <li class="nav-item">
           <a class="nav-link active" href="/home">Hem</a>
@@ -19,7 +20,7 @@
         </li>
         
       </ul>
-<div class="container">
+
         
     <div class="row">
         <div class="col-md-12 col-md-offset-2">

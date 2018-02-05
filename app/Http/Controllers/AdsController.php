@@ -15,9 +15,9 @@ class AdsController extends Controller
     public function index()
     {
         $ads= Ad::all();
+        $subCategories = Categories::where('id', '<', 5)->get();;
 
-        // return $ads;
-        return view('ads.index', compact('ads'));
+        return view('ads.index', compact('ads', 'subCategories'));
     }
 
     /**

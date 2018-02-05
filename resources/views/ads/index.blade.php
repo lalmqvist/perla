@@ -5,18 +5,48 @@
 
 
     
-@if (isset($categoryName))
+<div class="container-fluid">
+    @if (isset($category))
 
-<h1>{{ $categoryName }}</h1>
-
-@endif
-
+    <h1>{{ $category->name }}</h1>
     
+    @endif
+            <div class="row">
+              <nav class="col-md-2 d-none d-md-block bg-light bg-light-sidebar sidebar">
+                <div class="sidebar-sticky">
+                    @if (isset($category))
 
-
-    
-    <main role="main" class="container">
-    <div class="card-columns">
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>
+                          @foreach ($subCategories as $subCategory)
+                          
+                            @if ($subCategory->id == $category->parent)
+                              {{ $subCategory->name }}
+                            @endif
+                          @endforeach
+                        </span>
+                        <a class="d-flex align-items-center text-muted" href="#">
+                          <span data-feather="plus-circle"></span>
+                        </a>
+                      </h6>
+                      <div class="dropdown-divider"></div>
+                    @endif
+                  
+                  <ul class="nav flex-column mb-2">
+                    @foreach ($subCategories as $subCategory)
+                    <li class="nav-item">
+                      <a class="nav-link" href="/categories/{{$subCategory->id}}">
+                        <span data-feather="file-text"></span>
+                        {{$subCategory->name}}
+                      </a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                    @endforeach
+                  </ul>
+                </div>
+              </nav>
+      
+    <div class="card-columns col-md-10">
     @foreach ($ads as $ad)
         <div class="card text-center">
           <a href="/ads/{{ $ad->id }}">
@@ -36,5 +66,6 @@
     <script src="../js/ad.index.js"></script>   
         
       </div>
-      </main>
+    </div>
+    </div>
 @endsection

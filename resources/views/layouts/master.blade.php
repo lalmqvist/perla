@@ -31,7 +31,7 @@
       </div>
     @endif
     
-    <main role="main" class="container">
+    <main role="main" id="main-container">
         @yield('content')
     </main>
     

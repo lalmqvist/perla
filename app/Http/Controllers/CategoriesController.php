@@ -46,11 +46,11 @@ class CategoriesController extends Controller
      */
     public function show(Categories $categories)
     {
-        $categoryName = $categories->name;
-
+        $category = $categories;
+        $subCategories = Categories::where('parent', $categories->parent)->get();
         $ads = $categories->ads;
 
-        return view('ads.index', compact('ads', 'categoryName'));
+        return view('ads.index', compact('ads', 'category', 'subCategories'));
     
     
     }
