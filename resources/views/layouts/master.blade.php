@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC|Yanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="/css/stylesheet.css">
 
-    <title>Perla - Your own charity shop</title>
+    <title>Perla - @yield('title')</title>
   </head>
   <body>
     @include('layouts.nav')

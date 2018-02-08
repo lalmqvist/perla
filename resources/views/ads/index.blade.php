@@ -1,6 +1,17 @@
 @extends ('layouts.master')
 {{--  <link rel="stylesheet" href="/css/ads.css">  --}}
 
+@if (isset($category))
+
+  @section('title', $category->name)
+ 
+@else
+
+  @section('title', 'Annonser')
+
+@endif
+
+
 @section('content')
 
 

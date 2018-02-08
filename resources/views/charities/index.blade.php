@@ -1,6 +1,6 @@
 @extends ('layouts.master')
 <link rel="stylesheet" href="/css/charities.css">
-
+@section('title', 'Välgörenhet')
 @section('content')
 
 <h1>Hejsan</h1>

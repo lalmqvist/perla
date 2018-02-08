@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/css/cart.css">
 @extends ('layouts.master')
 
-
+@section('title', 'Kassa')
 @section('content')
 
 <div class="col-md-12 form-cont col-md-offset-2">

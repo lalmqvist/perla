@@ -1,5 +1,5 @@
 @extends ('layouts.master')
-
+@section('title', $fieldName)
 @section('content')
 
 <h1>Välgörenhetsorganisationer för {{ $fieldName }}</h1>
