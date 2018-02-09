@@ -29,9 +29,11 @@ Route::get('/users', function () {
     return view('users', compact('users'));
 });
 
+
 Route::get('/ads', 'AdsController@index');
 Route::get('/ads/{ad}', 'AdsController@show');
-Route::get('/ads/search/{phrase}', 'AdsController@search');
+
+Route::post('/showresult', 'AdsController@showSearch');
 
 Route::get('/categories/{categories}', 'CategoriesController@show');
 

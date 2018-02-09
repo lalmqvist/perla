@@ -39,6 +39,11 @@ body {
 
   }
 
+  #navbar-first, #navbar-second {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
   .navbar-toggler {
     font-size: 1.7rem;
   }
@@ -101,4 +106,9 @@ body {
 
 nav#navbar-second .nav-link {
     font-family: 'Patrick Hand SC', cursive;
+}
+.dropdown-menu.show {
+  display: block;
+  width: 255px;
+
 }

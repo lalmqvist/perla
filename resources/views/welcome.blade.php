@@ -1,5 +1,6 @@
 @extends ('layouts.master')
 @section('title', 'Start')
+
 @section('content')
 
 @include('partials.carousel')

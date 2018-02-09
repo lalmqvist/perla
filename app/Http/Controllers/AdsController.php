@@ -7,6 +7,7 @@ use App\Ad;
 use App\User;
 use App\Charities;
 use App\Categories;
+use App\Keyword;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -50,12 +51,50 @@ class AdsController extends Controller
     
     }
 
-    public function search($phrase)
+    public function searchAutocomplete(Request $request)
     {
 
-        //Sök i databasen
-        $result = 'Hej';
+        $phrase = trim($request->search);
+
+        if (strlen($phrase) <= 1) {
+
+            $keywords = Keyword::where('word', 'like', $phrase. '%')->select('word')->get();
+        } else {
+
+            $keywords = Keyword::where('word', 'like', '%' . $phrase . '%')->select('word')->get();
+        }
+        $result = [];
+        foreach ($keywords as $key => $word) {
+            $result[$key] = $word->word;
+        }
+
         return $result;
+    
+    }
+
+    public function showSearch(Request $request)
+    {
+        // dd($request->search);
+        $phrase = trim($request->search);
+        $ads = Ad::where('title', 'like', '%' . $phrase . '%')->get();
+        // $phrase = trim($phrase);
+        // if (strlen($phrase) <= 1) {
+        //     echo 'En';
+        //     $keywords = Keyword::where('word', 'like', $phrase. '%')->select('word')->get();
+        // } else {
+        //     echo 'Flera';
+        //     $keywords = Keyword::where('word', 'like', '%' . $phrase . '%')->select('word')->get();
+        // }
+        // $result = [];
+        // foreach ($keywords as $key => $word) {
+        //     $result[$key] = $word->word;
+        // }
+        // var_dump($keywords);
+        // $result = array('hej', 'hejsan');
+        // return $result;
+        // return response('OK!', 200)->json($result);
+        // return view('ads.index', compact('ads', 'subCategories'));
+        return view('ads.index', compact('ads'));
     
     }
 
