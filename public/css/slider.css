@@ -63,66 +63,13 @@ div.slideblock .btn-outline-primary:hover {
 
 }
 
-/** Produktbild. */
-/* div.slide_prod img {
-	width: 90%;
-	margin-left: 5%;
-	margin-right: 5%;
-	transition: all 0.3s;
-	position: relative;
-} */
-
-/* div.slide_prod:hover img {
-	transform:scale(1.1,1.1);
-} */
-
-/* div.slide_prod:hover button.add_to_cart {
-	display: block;
-} */
-
-
-/** Produktnamn och pris. */
-/* div.slide_prod h3 {
-	text-align: center;
-	
-} */
-
-/* div.slide_info {
-	width: 100%;
-	position: absolute;
-	left: auto;
-	right: auto;
-	bottom: 83px;
-	
-} */
-
-/* h3.slide_title {
-	font-family: 'Libre Franklin';
-	font-weight: 200;
-	font-size: 0.8em;
-
-
-} */
-
-/* h3.price {
-	margin-top: -3px;
-	font-size: 0.9em;
-} */
-
-
-/* 
-button.add_to_cart:hover {
-	background-color: #4f5054;
-	color: #fff;
-	
-} */
 
 div.slide_arrow {
 	
 	z-index: 100;
 	
 	height: 100%;
-	width: 40px;
+	width: 50px;
 	position: absolute;
 }
 
@@ -131,6 +78,7 @@ div#left_arrow, div#left_arrow_2 {
 }
 div#left_arrow.visible {
 	display: block;
+	left: 10px;
 }
 
 div#left_arrow_2.visible {
@@ -138,7 +86,7 @@ div#left_arrow_2.visible {
 }
 
 div#right_arrow, div#right_arrow_2 {
-	right: 0;
+	right: 10px;
 }
 
 div#right_arrow.hidden {
@@ -209,50 +157,25 @@ div#right_arrow_back_2:hover .tooltiptext {
     display: block;
 }
 
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px)
+{
+	div.slider_wrapper {
+
+		min-height: 500px;
+		margin-top: 50px
+	}
+}
+
+
 /** IPAD */
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
 
-@media (min-width: 490px) {
 
-
-/* div#slideblock {
+div#slideblock {
 	width: 266%;
 }
-
-div#slideblock_2 {
-	width: 266%;
-}
-
-div.slide_prod {
-	height: 240px;
-}
-
-
-
-div.slide_prod:hover button.add_to_cart {
-	display: block;
-}
-
-
-div.slide_info {
-	bottom: 66px;
-}
-
-h3.slide_title {
-	font-size: 0.9em;
-}
-
-h3.price {
-	margin-top: -4px;
-    font-size: 1em;
-}
-
-
-div.slide_prod:hover button.add_to_cart {
-	display: block;
-}
-
-
-
 
 div.slide_arrow {
 	z-index: 100;
@@ -264,102 +187,58 @@ div.slide_arrow {
 div.slide_arrow > span.icon {
 	font-size: 40px;
     top: 39%;
-} */
+}
 
 
 }
 
-
-/**DESKTOP */
-
-
-
-@media (min-width: 770px) {
-
-/* 
-	.title_feat {
-		font-size: 1.9em;
-		top: 10px;
-		left: auto;
-		right: auto;
-		width: 100%;
-		z-index: 300;
-	}
-
-	div.slider_wrapper {
-		min-width: 750px;
-	    max-width: 1255px;
-	    min-height: 800px;
-	}
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
 
 	div#slideblock {
-        width: 200%;
+		width: 400%;
+	}
+	
+	div.slider_wrapper {
+		min-height: 465px;
+		margin-top: 30px;
 	}
 
-	div#slideblock_2 {
-	width: 200%;
+	div.slide_arrow {
+		z-index: 100;
+		width: 40px;
+		position: absolute;
 	}
 
 	div.slide_prod {
 		width: 12.5%;
-		height: 100%;
+	}
+	
+	
+	div.slide_arrow > span.icon {
+		font-size: 35px;
+		top: 39%;
 	}
 
-	div.slide_prod img {
-		width: 90%;
-		margin-left: 5%;
-		margin-right: 5%;
-	} */
+ }
 
+ /* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
 
-
-	/** Produktnamn och pris. */
-	
-
-	
-/* 
-	span.icon {
-		margin-left: 0px;
-		font-size: 1.2em;
+	div.slider_wrapper {
+		min-height: 355px;
+		margin-top: 30px;
 	}
 
-	
+	div.slide_arrow {
+		z-index: 100;
+		width: 40px;
+		position: absolute;
+	}
 
 	div.slide_arrow > span.icon {
-		font-size: 45px;
-		position: absolute;
-		top: 40%;
-		
-	} */
+		font-size: 30px;
 
-
-
-
-
-
-
-}
-
-
-
-/* @media (min-width: 920px) {
-	div.slide_info {
-	    bottom: 35px;
-		
 	}
 
-	h3.slide_title {
-		font-size: 1em;
-	}
-
-	h3.price {
-		margin-top: -3px;
-		font-size: 1.2em;
-	}
-    
-
-} */
-
-
-
-/** CSS FÖR PRODUKTSLIDER -> END */
+ }

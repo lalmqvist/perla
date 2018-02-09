@@ -29,7 +29,7 @@ var moveRight;
 
 function moveSlideBlockLeft() {
   
-  if (window.innerWidth > 770) {
+  if (window.innerWidth > 991.98) {
     var medd = ("Desktop");
     moveLeft = -25;
     moveRight = 25;
@@ -42,7 +42,7 @@ function moveSlideBlockLeft() {
     
   }
 
-  if (window.innerWidth < 770 && window.innerWidth > 490) {
+  if (window.innerWidth < 991.98 && window.innerWidth > 767.98) {
     var medd = ("iPAD");
     moveLeft = -33.3;
     moveRight = 33.3;
@@ -55,7 +55,7 @@ function moveSlideBlockLeft() {
     
   }
 
- if (window.innerWidth < 490) {
+ if (window.innerWidth < 767.98) {
     var medd = ("MOBILE");
     moveLeft = -50;
     moveRight = 50;
