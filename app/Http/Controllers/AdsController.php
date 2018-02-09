@@ -50,6 +50,15 @@ class AdsController extends Controller
     
     }
 
+    public function search($phrase)
+    {
+
+        //Sök i databasen
+        $result = 'Hej';
+        return $result;
+    
+    }
+
     public function showUser(User $user)
     {
 

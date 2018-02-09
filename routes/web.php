@@ -31,6 +31,7 @@ Route::get('/users', function () {
 
 Route::get('/ads', 'AdsController@index');
 Route::get('/ads/{ad}', 'AdsController@show');
+Route::get('/ads/search/{phrase}', 'AdsController@search');
 
 Route::get('/categories/{categories}', 'CategoriesController@show');
 
@@ -73,3 +74,5 @@ Route::post('/mypages/newad', 'AdsController@store')->middleware('auth');
 
 // My pages - visa ordrar
 Route::get('/mypages/orders', 'OrderController@index')->middleware('auth');
+
+

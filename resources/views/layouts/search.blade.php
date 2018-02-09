@@ -6,9 +6,10 @@
     <div class="card card-body dropdown-search">
         <form class="form-inline mt-2 mt-md-0">
             
-          <input class="form-control mr-sm-2" type="text" placeholder="Sök..." aria-label="Search">
+          <input class="form-control mr-sm-2" id="search-field" type="text" placeholder="Sök..." aria-label="Search">
           <button class="btn my-2 my-sm-0 icons" type="submit">n</button>
         </form>          
       </div>
   </div>
+ 
   {{--  Search field and toggler - end   --}}
