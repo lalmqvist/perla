@@ -75,26 +75,31 @@ class AdsController extends Controller
     public function showSearch(Request $request)
     {
         // dd($request->search);
-        $phrase = trim($request->search);
-        $ads = Ad::where('title', 'like', '%' . $phrase . '%')->get();
-        // $phrase = trim($phrase);
-        // if (strlen($phrase) <= 1) {
-        //     echo 'En';
-        //     $keywords = Keyword::where('word', 'like', $phrase. '%')->select('word')->get();
-        // } else {
-        //     echo 'Flera';
-        //     $keywords = Keyword::where('word', 'like', '%' . $phrase . '%')->select('word')->get();
-        // }
-        // $result = [];
-        // foreach ($keywords as $key => $word) {
-        //     $result[$key] = $word->word;
-        // }
-        // var_dump($keywords);
-        // $result = array('hej', 'hejsan');
-        // return $result;
-        // return response('OK!', 200)->json($result);
-        // return view('ads.index', compact('ads', 'subCategories'));
-        return view('ads.index', compact('ads'));
+        $phrase = $request->input('search');
+        $ads = Ad::where('title', 'like', '%' . $phrase . '%')
+        ->orWhere('brand', 'like', '%' . $phrase . '%')
+        ->orWhere('type', 'like', '%' . $phrase . '%')
+        ->orWhere('color', 'like', '%' . $phrase . '%')
+        ->orWhere('material', 'like', '%' . $phrase . '%')
+        ->orWhere('keywords', 'like', '%' . $phrase . '%')
+        ->get();
+
+        return view('ads.search', compact('ads', 'phrase'));
+    
+    }
+
+    public function showSearchWord($phrase)
+    {
+
+        $ads = Ad::where('title', 'like', '%' . $phrase . '%')
+        ->orWhere('brand', 'like', '%' . $phrase . '%')
+        ->orWhere('type', 'like', '%' . $phrase . '%')
+        ->orWhere('color', 'like', '%' . $phrase . '%')
+        ->orWhere('material', 'like', '%' . $phrase . '%')
+        ->orWhere('keywords', 'like', '%' . $phrase . '%')
+        ->get();
+
+        return view('ads.search', compact('ads', 'phrase'));
     
     }
 

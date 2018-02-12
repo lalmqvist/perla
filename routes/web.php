@@ -33,7 +33,8 @@ Route::get('/users', function () {
 Route::get('/ads', 'AdsController@index');
 Route::get('/ads/{ad}', 'AdsController@show');
 
-Route::post('/showresult', 'AdsController@showSearch');
+Route::post('/showSearch', 'AdsController@showSearch');
+Route::get('/showSearch/{phrase}', 'AdsController@showSearchWord');
 
 Route::get('/categories/{categories}', 'CategoriesController@show');
 

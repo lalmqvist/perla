@@ -107,8 +107,8 @@ body {
 nav#navbar-second .nav-link {
     font-family: 'Patrick Hand SC', cursive;
 }
-.dropdown-menu.show {
+
+#search-dropdown.show {
   display: block;
   width: 255px;
-
 }

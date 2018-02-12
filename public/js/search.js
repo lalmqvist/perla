@@ -43,7 +43,7 @@ function hinter(event) {
                 for (let index = 0; index < response.length; index++) {
                     var dropdownItem = document.createElement('a');
                     dropdownItem.innerHTML = response[index];
-                    dropdownItem.href = "/searchresult/" + response[index];
+                    dropdownItem.href = "/showSearch/" + response[index];
                     dropdownItem.classList.add("dropdown-item");
 
                     
@@ -53,7 +53,7 @@ function hinter(event) {
             }
         };
 
-        window.hinterXHR.open("POST", "api/search", true);
+        window.hinterXHR.open("POST", "/api/search", true);
         window.hinterXHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
        
         window.hinterXHR.send('search=' + input.value);
