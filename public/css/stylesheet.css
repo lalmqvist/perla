@@ -164,6 +164,17 @@ div.fullScreen div.carousel-inner {
     border-color: #EF909E;
 }
 
+.btn-outline-primary.disabled, .btn-outline-primary:disabled {
+    color: #EF909E;
+    background-color: transparent;
+}
+
+
+
+
+
+
+
 .btn-primary:hover, .btn-primary:focus {
     color: #fff;
     background-color: #EA5273;

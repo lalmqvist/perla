@@ -50,7 +50,9 @@
                 <p class="ad-info"><b>Övrigt:</b> {{$ad->other}}</p>
             @endif
             <a href="/addtocart/{{ $ad->id }}"><button class="btn btn-primary btn-lg btn-block btn-custom">Lägg i kundvagn</button></a>    
-            <a href="/addtowishlist/{{ $ad->id }}"><button id="wish-button" class="btn btn-outline-primary btn-lg btn-block btn-custom"><span class="icons">e</span>  Spara som favorit</button></a>    
+            @auth
+                <button id="wish-button" data-ad-id="{{ $ad->id }}" data-user-id="{{ Auth::user()->id }}" class="btn btn-outline-primary btn-lg btn-block btn-custom"><span class="icons">e</span>  Spara som favorit</button>  
+            @endauth
         </div>
         </div>
       </div>
@@ -88,6 +90,7 @@
 
 @section('pagescript')
     <script src="../js/ad.show.js"></script>
+    <script src="../js/wishlist.js"></script>
 @stop
 
 @endsection

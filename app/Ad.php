@@ -32,10 +32,20 @@ class Ad extends Model
         return $this->belongsToMany('App\Charities', 'ads_charities', 'ad_id', 'charity_id');
     }
 
+    public function adsInWishlist()
+    {
+        return $this->belongsToMany('App\Users', 'wishlist', 'ad_id', 'user_id');
+    }
+
     public function images()
     {
         return $this->hasMany('App\Img_ad');
     }
+
+    // public function wishlist()
+    // {
+    //     return $this->hasMany('App\Wishlist');
+    // }
 
     public function charitySum()
     {

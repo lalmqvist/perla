@@ -19,7 +19,7 @@
             
             <div class="col-md-4">
                 <a href="/ads/{{ $item->id }}">
-                    <img class="p-3" width="80px" src="../img/products/thumb/{{ $item->thumb }}">
+                    <img class="p-3" width="80px" src="../img/products/{{ $item->thumb }}">
                     <h5 class="d-inline">{{$item->name}}</h5>
                 </a>
             </div>

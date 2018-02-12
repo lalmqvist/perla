@@ -7,20 +7,11 @@
         <form class="form-inline mt-2 mt-md-0" method="POST" action="/showSearch">
           {{ csrf_field() }}
           <input class="form-control mr-sm-2" id="search-field" type="text" placeholder="Sök..." aria-label="Search" name="search" autocomplete="off">
-{{--            
-          <datalist id="huge_list" class="d-block">
-          </datalist>  --}}
-{{--  
-          <div class="dropdown">
-              <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown trigger
-              </button>  --}}
+
               <div id="search-dropdown" class="dropdown-menu" aria-labelledby="dLabel">
                   
               </div>
-            {{--  </div>  --}}
-          
-          
+
           <br>
           <button class="btn my-2 my-sm-0 icons" type="submit">n</button>
         </form>          

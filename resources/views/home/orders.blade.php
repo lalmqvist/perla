@@ -17,6 +17,9 @@
             <a class="nav-link" href="/mypages/ads">Mina annonser</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/mypages/wishlist">Mina favoriter</a>
+      </li>
+        <li class="nav-item">
             <a class="nav-link" href="/mypages/newad">Skapa ny annons</a>
         </li>
 </ul>

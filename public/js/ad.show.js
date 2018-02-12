@@ -2,15 +2,13 @@
 var smallImages; 
 var largeImg; 
 window.addEventListener("load", function(){
-	document.getElementById("large-img").addEventListener("click", openFullScreen);
-	document.getElementById("wish-button").addEventListener("click", toggleWishList);
-
+  
+  document.getElementById("large-img").addEventListener("click", openFullScreen);
 	document.getElementById("close-carousel").addEventListener("click", closeFullScreen);
 
 	smallImages = document.querySelectorAll('.small-img');
     largeImg = document.getElementById("large-img");
     addClickListeners(smallImages);
-
 });
 
 function addClickListeners(pics) {
@@ -24,14 +22,6 @@ function addClickListeners(pics) {
     largeImg.src = e.target.currentSrc;
 
   }
-
-  function toggleWishList(e) {
-      console.log(e.target);
-      e.target.innerHTML = "<span class='icons'>f</span>  Sparad som favorit";
-
-  }
-
-
 
 function openFullScreen(e) {
     

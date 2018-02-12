@@ -78,4 +78,6 @@ Route::post('/mypages/newad', 'AdsController@store')->middleware('auth');
 // My pages - visa ordrar
 Route::get('/mypages/orders', 'OrderController@index')->middleware('auth');
 
+Route::get('/mypages/wishlist', 'WishlistController@index')->middleware('auth');
+
 
