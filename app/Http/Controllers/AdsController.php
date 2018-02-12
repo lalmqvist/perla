@@ -15,8 +15,16 @@ class AdsController extends Controller
 {
     public function index()
     {
-        $ads= Ad::all();
+        $allAds= Ad::all();
         $subCategories = Categories::where('id', '<', 5)->get();;
+
+        $ads = [];
+        foreach ($allAds as $key => $ad) {
+            
+            if ($ad->active) {
+                $ads[] = $ad;
+            }
+        }
 
         return view('ads.index', compact('ads', 'subCategories'));
     }
@@ -76,13 +84,21 @@ class AdsController extends Controller
     {
         // dd($request->search);
         $phrase = $request->input('search');
-        $ads = Ad::where('title', 'like', '%' . $phrase . '%')
+        $allAds = Ad::where('title', 'like', '%' . $phrase . '%')
         ->orWhere('brand', 'like', '%' . $phrase . '%')
         ->orWhere('type', 'like', '%' . $phrase . '%')
         ->orWhere('color', 'like', '%' . $phrase . '%')
         ->orWhere('material', 'like', '%' . $phrase . '%')
         ->orWhere('keywords', 'like', '%' . $phrase . '%')
         ->get();
+
+        $ads = [];
+        foreach ($allAds as $key => $ad) {
+            
+            if ($ad->active) {
+                $ads[] = $ad;
+            }
+        }
 
         return view('ads.search', compact('ads', 'phrase'));
     
@@ -91,13 +107,21 @@ class AdsController extends Controller
     public function showSearchWord($phrase)
     {
 
-        $ads = Ad::where('title', 'like', '%' . $phrase . '%')
+        $allAds = Ad::where('title', 'like', '%' . $phrase . '%')
         ->orWhere('brand', 'like', '%' . $phrase . '%')
         ->orWhere('type', 'like', '%' . $phrase . '%')
         ->orWhere('color', 'like', '%' . $phrase . '%')
         ->orWhere('material', 'like', '%' . $phrase . '%')
         ->orWhere('keywords', 'like', '%' . $phrase . '%')
         ->get();
+        
+        $ads = [];
+        foreach ($allAds as $key => $ad) {
+            
+            if ($ad->active) {
+                $ads[] = $ad;
+            }
+        }
 
         return view('ads.search', compact('ads', 'phrase'));
     
