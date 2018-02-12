@@ -1,8 +1,37 @@
-/* .card-columns {
-    @include media-breakpoint-only(lg) {
-      column-count: 4;
+
+#search-cards .card {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 0%;
+    flex: 1 0 0%;
+    margin-bottom: 0;
+    min-width: 300px;
+    max-width: 400px;
+    
+  }
+
+  @media (max-width: 991.98px) {
+    #search-cards .card {
+      min-height: 540px;
+      max-width: 100%;
     }
-    @include media-breakpoint-only(xl) {
-      column-count: 5;
+
+
+
+  }
+
+  @media (max-width: 650.98px) { 
+    #search-cards .card {
+    min-height: 540px;
+    max-width: 100%;
+    } 
+  }
+
+  @media (max-width: 575.98px) {
+    #search-cards .card {
+      min-height: 700px;
+      max-width: 100%;
     }
-  } */
+
+
+
+  }

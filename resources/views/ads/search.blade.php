@@ -1,5 +1,5 @@
 @extends ('layouts.master')
-{{--  <link rel="stylesheet" href="/css/ads.css">  --}}
+<link rel="stylesheet" href="/css/ads.css">
 
 @if (isset($category))
 
@@ -23,9 +23,9 @@
     
     @endif
            
-    <div class="card-group">
+    <div class="card-group" id="search-cards">
     @foreach ($ads as $ad)
-        <div class="card text-center w-25">
+        <div class="card text-center">
           <a href="/ads/{{ $ad->id }}">
             <img class="card-img-top" src="../img/products/thumb/{{ $ad->thumb }}" alt="{{ $ad->title }}">
           </a>
