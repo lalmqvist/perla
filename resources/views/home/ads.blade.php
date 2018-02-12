@@ -43,7 +43,7 @@
                 @foreach ($ads as $ad)
                 <tr>
                   <td>{{ $ad->id }}</td>
-                  <td>{{ $ad->title }}</td>
+                  <td><a href="/ads/{{ $ad->id }}">{{ $ad->title }}</a></td>
                   <td>{{ date($ad->created_at) }}</td>
                   <td>{{ $charitySum[$ad->id] }}</td>
                   <td>{{ $charityName[$ad->id] }}</td>

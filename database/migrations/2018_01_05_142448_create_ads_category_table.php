@@ -13,7 +13,7 @@ class CreateAdsCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('ads_category', function (Blueprint $table) {
+        Schema::create('ads_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('category_id')->unsigned();
             $table->integer('ad_id')->unsigned();
@@ -29,5 +29,6 @@ class CreateAdsCategoryTable extends Migration
     public function down()
     {
         Schema::dropIfExists('ads_category');
+        Schema::dropIfExists('ads_categories');
     }
 }

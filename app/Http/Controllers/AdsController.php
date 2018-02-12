@@ -10,6 +10,7 @@ use App\Categories;
 use App\Keyword;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\UploadRequest;
 
 class AdsController extends Controller
 {
@@ -153,18 +154,77 @@ class AdsController extends Controller
      */
     public function store(Request $request)
     {
-        // // dd($request->file());
-        // $path = $request->file('thumb')->store('thumb');
-        // // $path = Storage::putFile('thumb', $request->file('thumb'));
-        // dd($path);
-        // // ../storage/app/thumb/CgL0vFDUOq4JAf8i0IDwfXK4ji3YvnX24canMiR7.png
-        // // $path = $request->file('avatar')->store('avatars');
-        // // Storage::disk('local')->put('file.txt', 'Contents');
-    }
-    
-    public function showCategory()
-    {
+        //Validerar fälten
+        $this->validate($request, [
 
+            'thumb' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'img2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'img3' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    
+        ]);
+    
+    //Hämtar uppladdade filer
+        $thumb = $request->file('thumb');
+        $img2 = $request->file('img2');
+        $img3 = $request->file('img3');
+    
+        //Sets the images names
+        $input['thumb_name'] = Auth::user()->id . time().'_1.'.$thumb->getClientOriginalExtension();
+        $input['img'][1] = Auth::user()->id . time().'_1.'.$thumb->getClientOriginalExtension();
+        $input['img'][2] = Auth::user()->id . time().'_2.'.$img2->getClientOriginalExtension();
+        $input['img'][3] = Auth::user()->id . time().'_3.'.$img3->getClientOriginalExtension();
+    
+        $destinationPath = public_path('/img/products');
+    
+    //Moves files to the path above
+        $thumb->move($destinationPath, $input['thumb_name']);
+        $img2->move($destinationPath, $input['img'][2]);
+        $img3->move($destinationPath, $input['img'][3]);
+
+    //Saves ad to ads table
+        Ad::create([
+            'user_id' => Auth::user()->id,
+            'title' => $request->input('title'),
+            'price' => $request->input('price'),
+            'brand' => $request->input('brand'),
+            'type' => $request->input('type'),
+            'size' => $request->input('size'),
+            'color' => $request->input('color'),
+            'material' => $request->input('material'),
+            'condition' => $request->input('condition'),
+            'other' => $request->input('other'),
+            'thumb' => $input['thumb_name'],
+            'active' => true,
+        ]);
+
+        //Adds the images to img_ads table with last ad_id
+        foreach ($input['img'] as $key => $img) {
+            $latestAd = Ad::latest()->first();
+            $latestAd->images()->create([
+                'ad_id' => $latestAd->id,
+                'img' => $img,
+            ]);
+        }
+            
+        //Adds chosen categories to ads_categories table
+        foreach ($request->input('category') as $key => $value) {
+            $latestAd = Ad::latest()->first();
+            $latestAd->ad_categories()->create([
+                'ad_id' => $latestAd->id,
+                'category_id' => $key,
+            ]);
+        }
+        
+        //Adds the chosen charity to ads_charities table    
+        $latestAd = Ad::latest()->first();
+        $latestAd->charitySum()->create([
+            'ad_id' => $latestAd->id,
+            'charity_id' => $request->input('charity'),
+            'sum' => $request->input('charitySum')
+        ]);
+
+
+        return back()->with('status','Din annons är skapad!');
     }
 
 }

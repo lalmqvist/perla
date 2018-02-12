@@ -28,9 +28,7 @@
       
   </div>
   
-  {{--  <script src="{{ asset('js/search.js') }}"></script>  --}}
-  {{--  @include('js/search.js');  --}}
-  {{--  <script src="../js/search.js"></script>  --}}
+
   @section('pagescript')
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="../js/search.js"></script>

@@ -22,10 +22,10 @@ class Ad extends Model
 
     }
 
-    // public function categories()
-    // {
-    //     return $this->belongsToMany('App\Categories', 'ads_category', 'ad_id', 'category_id');
-    // }
+    public function ad_categories()
+    {
+        return $this->hasMany('App\Ads_categories');
+    }
 
     public function charities()
     {

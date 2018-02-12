@@ -78,7 +78,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-3">
                                 <label for="brand">Märke</label>
-                                <input id="brand" type="text" class="form-control" name="brand" value="">
+                                <input id="brand" type="text" class="form-control" name="brand">
                                  @if ($errors->has('brand'))
                                     <span class="help-block">
                                             <div class="alert alert-danger" role="alert">
@@ -89,7 +89,7 @@
                               </div>
                               <div class="form-group col-md-3">
                                     <label for="inputCondition">Skick</label>
-                                    <select id="inputCondition" class="form-control">
+                                    <select name="condition" id="inputCondition" class="form-control">
                                       <option selected>Välj...</option>
                                       <option>Nytt</option>
                                       <option>Fint</option>
@@ -99,7 +99,7 @@
                                   </div>
                                   <div class="form-group col-md-2">
                                         <label for="inputSize">Storlek</label>
-                                        <select id="inputSize" class="form-control">
+                                        <select name="size" id="inputSize" class="form-control">
                                           <option selected>Välj...</option>
                                           <option>Visa ej...</option>
                                           <option>XS</option>
@@ -111,7 +111,7 @@
                                       </div>
                                       <div class="form-group col-md-2">
                                             <label for="inputColor">Färg</label>
-                                            <select id="inputColor" class="form-control">
+                                            <select name="color" id="inputColor" class="form-control">
                                               <option selected>Välj...</option>
                                               <option>Visa ej...</option>
                                               <option>Vit</option>
@@ -124,7 +124,7 @@
                                           </div>
                                           <div class="form-group col-md-2">
                                                 <label for="inputMaterial">Material</label>
-                                                <select id="inputMaterial" class="form-control">
+                                                <select name="material" id="inputMaterial" class="form-control">
                                                   <option selected>Välj...</option>
                                                   <option>Visa ej...</option>
                                                   <option>Skinn</option>

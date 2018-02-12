@@ -20,14 +20,14 @@ class CreateAdsTable extends Migration
             $table->integer('price');
             $table->string('brand');
             $table->string('type');
-            $table->string('size');
-            $table->string('color');
-            $table->string('material');
+            $table->string('size')->nullable($value = true);
+            $table->string('color')->nullable($value = true);
+            $table->string('material')->nullable($value = true);
             $table->string('condition');
-            $table->string('other');
+            $table->string('other')->nullable($value = true);
             $table->string('thumb');
             $table->boolean('active')->default(true);
-            $table->text('keywords');
+            $table->text('keywords')->nullable($value = true);
             $table->timestamps();
         });
     }

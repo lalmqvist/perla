@@ -27,7 +27,7 @@
     @foreach ($ads as $ad)
         <div class="card text-center">
           <a href="/ads/{{ $ad->id }}">
-            <img class="card-img-top" src="../img/products/thumb/{{ $ad->thumb }}" alt="{{ $ad->title }}">
+            <img class="card-img-top" src="../img/products/{{ $ad->thumb }}" alt="{{ $ad->title }}">
           </a>
             <div class="card-body">
             <h5 class="card-title">{{ $ad->title }}</h5>

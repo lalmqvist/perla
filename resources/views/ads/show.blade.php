@@ -2,18 +2,18 @@
 @section('title', $ad->title)
 @section('content')
 
-    <div class="container">
+    <div class="container product-container">
         
         <div class="row">
           <div class="col">
             
             <div class="container" id="img-container">
                 <div class="row">
-                    <div class="col"><img id="large-img" src="../img/products/large/{{$ad->images[0]->img}}"></div>
+                    <div class="col"><img id="large-img" src="../img/products/{{$ad->images[0]->img}}"></div>
                 </div>
                 <div class="row">
                     @foreach ($ad->images as $key => $img)
-                    <div class="col"><img class="small-img" id="small-img-{{$key}}" src="../img/products/large/{{$img->img}}"></div>
+                    <div class="col"><img class="small-img" id="small-img-{{$key}}" src="../img/products/{{$img->img}}"></div>
                     
                     @endforeach
                 </div>
@@ -21,7 +21,7 @@
             </div>
           </div>
           
-          <div class="col-5">
+          <div class="col-4">
             <h2 class="ad-title">{{$ad->title}}</h2>
             <h2 class="ad-price">{{$ad->price}} kr</h2>
             <h5>{{$charitySum}}% av summan går till <a href="#">{{$charityName}}</a></h5>
@@ -66,7 +66,7 @@
                 @else
                 <div class="carousel-item">
                 @endif
-                <img class="d-block w-70 align-baseline" src="../img/products/large/{{$img->img}}" alt="First slide">
+                <img class="d-block w-70 align-baseline" src="../img/products/{{$img->img}}" alt="First slide">
               </div>
               @endforeach
               
@@ -84,6 +84,10 @@
           </div>
           </div>
           </div>
-      <script src="../js/ad.show.js"></script>
+      
+
+@section('pagescript')
+    <script src="../js/ad.show.js"></script>
+@stop
 
 @endsection

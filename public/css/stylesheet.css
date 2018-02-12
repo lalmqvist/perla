@@ -48,10 +48,19 @@ div.container {
     min-height: 700px;
 }
 
+div.product-container {
+    /* margin-top: 30px; */
+    padding-top: 20px;
+    background-color: #ffffff;
+    min-height: 700px;
+    padding-bottom: 30px;
+    padding-right: 35px;
+}
+
 div.container-fluid {
     background-color: #ffffff;
     padding-top: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
 }
 
 div.container-fluid h1 {

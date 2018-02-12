@@ -53,15 +53,10 @@ class CategoriesController extends Controller
         foreach ($allAds as $key => $ad) {
             
             if ($ad->active) {
-                // echo $ad->id . 'är active. <br>';
                 $ads[] = $ad;
             }
         }
-        // $ads = Categories::with(['ads' => function ($query) {
-        //     $query->where('active', '=', 1);
-        // }])->get();
 
-        // dd($activeAds);
 
         return view('ads.index', compact('ads', 'category', 'subCategories'));
     
