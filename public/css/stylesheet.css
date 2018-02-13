@@ -220,3 +220,9 @@ div.fullScreen div.carousel-inner {
     font-family: 'perla';
     margin-right: 5px;
 }
+
+#progress-container {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+  }
