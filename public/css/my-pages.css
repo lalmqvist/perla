@@ -59,3 +59,40 @@ div.marketing {
   .nav-tabs {
     border-bottom: 1px solid pink;
   }
+ h4.progress-page {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: -10px;
+  }
+
+  .progress-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+#progress-container-ads, #progress-container-orders {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+  }
+
+#progress-page {
+    background-color: #ffebf4dc;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 20px;
+    padding-top: 20px;
+    border: 1px solid transparent;
+    border-radius: .70rem;
+    min-height: 40%;
+  }
+
+p.info-text {
+  text-align: center;
+}
+
+h5.info-text {
+  text-align: center;
+}

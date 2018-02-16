@@ -45,7 +45,7 @@ div.container {
     /* margin-top: 30px; */
     padding-top: 20px;
     background-color: #ffffff;
-    min-height: 700px;
+    min-height: 800px;
 }
 
 div.product-container {
@@ -221,8 +221,7 @@ div.fullScreen div.carousel-inner {
     margin-right: 5px;
 }
 
-#progress-container {
-    margin: 20px;
-    width: 200px;
-    height: 200px;
-  }
+
+
+
+
