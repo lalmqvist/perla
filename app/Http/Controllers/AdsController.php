@@ -8,6 +8,7 @@ use App\User;
 use App\Charities;
 use App\Categories;
 use App\Keyword;
+use Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UploadRequest;
@@ -169,17 +170,17 @@ class AdsController extends Controller
         $img3 = $request->file('img3');
     
         //Sets the images names
-        $input['thumb_name'] = Auth::user()->id . time().'_1.'.$thumb->getClientOriginalExtension();
-        $input['img'][1] = Auth::user()->id . time().'_1.'.$thumb->getClientOriginalExtension();
-        $input['img'][2] = Auth::user()->id . time().'_2.'.$img2->getClientOriginalExtension();
-        $input['img'][3] = Auth::user()->id . time().'_3.'.$img3->getClientOriginalExtension();
+        $input['thumb_name'] = 'adImg' . time().'_1.'.$thumb->getClientOriginalExtension();
+        $input['img'][1] = 'adImg' . time().'_1.'.$thumb->getClientOriginalExtension();
+        $input['img'][2] = 'adImg' . time().'_2.'.$img2->getClientOriginalExtension();
+        $input['img'][3] = 'adImg' . time().'_3.'.$img3->getClientOriginalExtension();
     
         $destinationPath = public_path('/img/products');
     
-    //Moves files to the path above
-        $thumb->move($destinationPath, $input['thumb_name']);
-        $img2->move($destinationPath, $input['img'][2]);
-        $img3->move($destinationPath, $input['img'][3]);
+        //Set the image size and save to given path
+        Image::make($thumb)->fit(500)->save($destinationPath . '/' . $input['thumb_name']);
+        Image::make($img2)->fit(500)->save($destinationPath . '/' . $input['img'][2]);
+        Image::make($img3)->fit(500)->save($destinationPath . '/' . $input['img'][3]);
 
     //Saves ad to ads table
         Ad::create([
