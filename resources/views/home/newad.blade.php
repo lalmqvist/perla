@@ -99,24 +99,40 @@
                                       <option>Normalt</option>
                                       <option>Slitet</option>
                                     </select>
+                                    @if ($errors->has('condition'))
+                                    <span class="help-block">
+                                            <div class="alert alert-danger" role="alert">
+                                                    {{ $errors->first('condition') }}
+                                                </div>
+                                    </span>
+                                @endif
                                   </div>
+
                                   <div class="form-group col-md-2">
                                         <label for="inputSize">Storlek</label>
                                         <select name="size" id="inputSize" class="form-control">
                                           <option selected>Välj...</option>
-                                          <option>Visa ej...</option>
+                                          <option value='{{ null }}'>Visa ej...</option>
                                           <option>XS</option>
                                           <option>S</option>
                                           <option>M</option>
                                           <option>L</option>
                                           <option>XL</option>
                                         </select>
+                                        @if ($errors->has('size'))
+                                    <span class="help-block">
+                                            <div class="alert alert-danger" role="alert">
+                                                    {{ $errors->first('size') }}
+                                                </div>
+                                    </span>
+                                @endif
                                       </div>
+                                      
                                       <div class="form-group col-md-2">
                                             <label for="inputColor">Färg</label>
                                             <select name="color" id="inputColor" class="form-control">
                                               <option selected>Välj...</option>
-                                              <option>Visa ej...</option>
+                                              <option value='{{ null }}'>Visa ej...</option>
                                               <option>Vit</option>
                                               <option>Svart</option>
                                               <option>Orange</option>
@@ -124,12 +140,20 @@
                                               <option>Rosa</option>
                                               <option>Grön</option>
                                             </select>
+                                            @if ($errors->has('color'))
+                                    <span class="help-block">
+                                            <div class="alert alert-danger" role="alert">
+                                                    {{ $errors->first('color') }}
+                                                </div>
+                                    </span>
+                                @endif
                                           </div>
+                                          
                                           <div class="form-group col-md-2">
                                                 <label for="inputMaterial">Material</label>
                                                 <select name="material" id="inputMaterial" class="form-control">
                                                   <option selected>Välj...</option>
-                                                  <option>Visa ej...</option>
+                                                  <option value='{{ null }}'>Visa ej...</option>
                                                   <option>Skinn</option>
                                                   <option>Ull</option>
                                                   <option>Bomull</option>
@@ -138,6 +162,13 @@
                                                   <option>Guld</option>
                                                   <option>Trä</option>
                                                 </select>
+                                                @if ($errors->has('material'))
+                                                    <span class="help-block">
+                                                        <div class="alert alert-danger" role="alert">
+                                                            {{ $errors->first('material') }}
+                                                        </div>
+                                                    </span>
+                                                @endif
                                               </div>
                     </div>
                     
@@ -214,8 +245,16 @@
                                           @endforeach
                                        
                                         </select>
+                                        @if ($errors->has('charity'))
+                                            <span class="help-block">
+                                                <div class="alert alert-danger" role="alert">
+                                                    {{ $errors->first('charity') }}
+                                                </div>
+                                            </span>
+                                        @endif
                                       </div>
-                                <div class="form-group col-md-6">
+                                
+                                    <div class="form-group col-md-6">
                                       <label for="inputCharitySum">Summa gåva</label>
                                       <select id="inputCharitySum" name="charitySum" class="form-control">
                                         <option selected value="10">10 %</option>
@@ -240,7 +279,15 @@
                                   <input type="checkbox" name="category[{{$category->id}}]" id="cat_{{$category->id}}" autocomplete="off"> {{$category->name}}
                                 </label>
                             @endforeach   
+                        
                               </div>
+                              @if ($errors->has('category'))
+                                            <span class="help-block">
+                                                <div class="alert alert-danger" role="alert">
+                                                    {{ $errors->first('category') }}
+                                                </div>
+                                            </span>
+                                        @endif
                         
                 {{--  </div>  --}}
                 <div class="row align-items-center">

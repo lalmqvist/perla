@@ -12,6 +12,7 @@ use Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UploadRequest;
+use Illuminate\Validation\Rule;
 
 class AdsController extends Controller
 {
@@ -156,13 +157,38 @@ class AdsController extends Controller
     public function store(Request $request)
     {
         //Validerar fälten
-        $this->validate($request, [
-
-            'thumb' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'img2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'img3' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-    
-        ]);
+        // dd($request->all());
+        $request->validate([
+            'thumb' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'img2' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'img3' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'title' => 'required|string|max:100',
+            'price' => 'required|numeric',
+            'brand' => 'required|string|max:255',
+            'type' => 'required|string|max:255',
+            'size' => [
+                'nullable',
+                Rule::notIn(['Välj...']),
+            ],
+            'color' => [
+                'nullable',
+                Rule::notIn(['Välj...']),
+            ],
+            'material' => [
+                'nullable',
+                Rule::notIn(['Välj...']),
+            ],
+            'condition' => [
+                'required',
+                Rule::notIn(['Välj...']),
+            ],
+            'other' => 'nullable|string',
+            'category' => 'required',
+            'charity' => [
+                'required',
+                Rule::notIn(['Välj...']),
+            ],
+            ]);
     
     //Hämtar uppladdade filer
         $thumb = $request->file('thumb');
