@@ -63,26 +63,16 @@ class UserController extends Controller
         $giftSum = 0.0;
 
         foreach ($ads as $key => $ad) {
-            // echo 'Procent för '. $ad->id.' är '.$ad->charitySum->sum;
-            // echo '<br>';
 
             $percent = $ad->charitySum->sum * 0.01;
             $price = $ad->price;
 
             $charitySum = $price * $percent;
-            // echo 'Price för '. $ad->id.' är '.$price;
-            // echo '<br>';
-            // echo 'Varav välgörenhet '. $ad->id.' är '.$charitySum;
-            // echo '<br>';
-            
+           
             $adsSum = $adsSum + $price;
             $giftSum = $giftSum + $charitySum;
-            // echo 'Totalt sålt efter '. $ad->id.' är '.$adsSum;
-            // echo '<br>';
-            // echo 'Total gåva efter '. $ad->id.' är '.$giftSum;
-            // echo '<br><br>';
-            
         }
+        
         $totalAds = [];
         $number = $giftSum / $adsSum;
         $percentAds = number_format($number, 2, '.', ',');
@@ -90,10 +80,6 @@ class UserController extends Controller
         $totalAds['adsSum'] = $adsSum;
         $totalAds['giftSum'] = $giftSum;
         $totalAds['percent'] = $percentAds;
-
-        // echo 'Total procent är '. $percentAds;
-        // echo '<br><br><br>';
-        // dd($ads);
         
         return $totalAds;
     }
@@ -153,7 +139,17 @@ class UserController extends Controller
     public function update(Request $request)
     {
         $user = Auth::user();
-        //Validera!!
+        $request->validate([
+            'fname' => 'required|string|max:255',
+            'lname' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'phone' => 'required|string|max:255',
+            'street1' => 'required|string|max:255',
+            'street2' => 'string|max:255',
+            'zip' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+        ]);
+        
         User::where('id', $user->id)->update([
             'fname' => $request->fname,
             'lname' => $request->lname,
