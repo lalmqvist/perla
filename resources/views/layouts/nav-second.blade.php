@@ -17,10 +17,9 @@
               </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ads" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VÄLGÖRENHET</a>
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VÄLGÖRENHET</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown10">
-                  <a class="dropdown-item" href="/ads">Alla</a>
-                  <a class="dropdown-item" href="/charities/1">Miljö & Natur</a>
+                <a class="dropdown-item" href="/charities/1">Miljö & Natur</a>
                 <a class="dropdown-item" href="/charities/3">Barn & Unga</a>
                 <a class="dropdown-item" href="/charities/5">Forskning</a>
                 <a class="dropdown-item" href="/charities/2">Mänskliga rättigheter</a>

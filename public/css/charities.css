@@ -1,4 +1,4 @@
-.card-title {
+/* .card-title {
     margin-bottom: .75rem;
     text-align: center;
 }
@@ -15,4 +15,25 @@ font-weight: 400;
 
     text-align: center;
 
+} */
+
+div.charity-card {
+    margin-bottom: 15px;
+    border: 1px solid rgb(156, 139, 139);
+    border-radius: 0;
+}
+
+#main-container > div.charity-card.card.bg-dark.text-white {
+    margin-bottom: 50px;
+}
+
+div.charity-card .card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color:#ffebf4;
+    border-bottom: none; 
+}
+
+.card-header > h5 > a:hover {
+    color: #EF909E;
 }

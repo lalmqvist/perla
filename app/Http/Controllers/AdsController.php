@@ -157,7 +157,6 @@ class AdsController extends Controller
     public function store(Request $request)
     {
         //Validerar fälten
-        // dd($request->all());
         $request->validate([
             'thumb' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'img2' => 'required|image|mimes:jpeg,png,jpg,gif,svg',

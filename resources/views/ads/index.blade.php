@@ -21,7 +21,10 @@
 
     <h1>{{ $category->name }}</h1>
     
+    @elseif (isset($charityName))
+    <h1>{{ $charityName }}</h1>
     @endif
+    @if (isset($subCategories))
             <div class="row">
               <nav class="col-md-2 d-none d-md-block bg-light bg-light-sidebar sidebar">
                 <div class="sidebar-sticky">
@@ -29,12 +32,14 @@
 
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                         <span>
-                          @foreach ($subCategories as $subCategory)
                           
-                            @if ($subCategory->id == $category->parent)
-                              {{ $subCategory->name }}
-                            @endif
-                          @endforeach
+                            @foreach ($subCategories as $subCategory)
+                            
+                              @if ($subCategory->id == $category->parent)
+                                {{ $subCategory->name }}
+                              @endif
+                            @endforeach
+                          
                         </span>
                         <a class="d-flex align-items-center text-muted" href="#">
                           <span data-feather="plus-circle"></span>
@@ -56,7 +61,7 @@
                   </ul>
                 </div>
               </nav>
-      
+            @endif
     <div class="card-columns col-md-10">
     @foreach ($ads as $ad)
         <div class="card text-center">

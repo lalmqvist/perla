@@ -40,8 +40,8 @@ Route::get('/categories/{categories}', 'CategoriesController@show');
 
 Route::get('/charities', 'CharitiesController@index');
 Route::get('/charities/{field}', 'CharitiesController@showField');
-Route::get('/charities/{field}/ads', 'CharitiesController@showAdsInField');
-Route::get('/charities/charity/{charities}', 'CharitiesController@showCharity');
+Route::get('/charities/ads/{charities}', 'CharitiesController@showAdsInCharity');
+// Route::get('/charities/charity/{charities}', 'CharitiesController@showCharity');
 
 Route::get('/categories/{categories}', 'CategoriesController@show');
 
