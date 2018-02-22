@@ -1,7 +1,3 @@
-// progressbar.js@1.0.0 version is used
-// Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
-// var ProgressBar = require('progressbar.js')
-
 var line = new ProgressBar.Line('#progress-container-orders');
 var orderProgress = document.getElementById("progress-container-orders").getAttribute( "data-progress" );
 var adsProgress = document.getElementById("progress-container-ads").getAttribute( "data-progress" );

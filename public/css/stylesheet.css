@@ -79,10 +79,6 @@ main#main-container {
     min-height: 700px;
 }
 
-/* .container {
-    margin-top: 50px;
-} */
-
 #img_container {
     margin-top: 0px!Important;
 }
@@ -121,9 +117,7 @@ img#large-img {
 }
 
 .fullScreen {
-    /* display: flex; */
     display: none;
-    
     text-align: center;
     justify-content: center;
     z-index: 30000;
@@ -135,8 +129,6 @@ img#large-img {
     bottom: 0;
     top: 0;
     position: fixed;
-    
-    /* display: none; */
 }
 
 p#close-carousel {

@@ -40,16 +40,6 @@ class OrderController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -57,7 +47,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-
+        //Sparar order i orders table
         Order::create([
             'user_id' => Auth::user()->id,
             'fname' => $request->input('fname'),
@@ -71,8 +61,10 @@ class OrderController extends Controller
             'city' => $request->input('city'),
             
         ]);
+        //Hämtar ID på nyss sparade order
         $order = Order::latest()->first();
 
+        //Sparar orderns produkter till order_ads table
         foreach ($cartItems = LaraCart::getItems() as $item) {
 
             $order->order_ads()->create([
@@ -81,12 +73,14 @@ class OrderController extends Controller
                 'price' => $item->price,
                 'gift' => $item->sum,
             ]);
-
+            
+            //Uppdaterar active kolumnen i ads table to false för att se att den är såld.
             Ad::where('id', $item->id)
             ->update(['active' => false]);
 
             }
 
+            //Töm kundvagn och redirecta med status 'Tack för din order!'
             LaraCart::emptyCart();
             return redirect()->route('home')->with('status', 'Tack för din order!');
 
@@ -104,17 +98,6 @@ class OrderController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Order $order)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -122,17 +105,6 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Order $order)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Order $order)
     {
         //
     }

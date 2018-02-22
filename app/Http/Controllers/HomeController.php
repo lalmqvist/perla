@@ -24,8 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
         $user = new UserController;
+        //Hämtar totalt sålt av user och totalt skänt till välgörenhet för att skriva ut på Mina sidor
         $progressOrders = $user->getUserOrderProgress();
         $progressAds = $user->getUserAdsProgress();
         return view('home', compact('progressOrders', 'progressAds'));

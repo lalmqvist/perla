@@ -12,7 +12,6 @@ class CartController extends Controller
 {
     public function __construct() 
     {
-        // LaraCart::add();
     }
 
     public function showCart()

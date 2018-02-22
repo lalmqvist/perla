@@ -17,7 +17,7 @@ function hinter(event) {
     // retireve the input element
     var input = event.target;
 
-    // retrieve the datalist element
+    // retrieve the dropdown element
     var search_dropdown = document.getElementById('search-dropdown');
 
     // minimum number of characters before we start to generate suggestions
@@ -68,13 +68,13 @@ $(window).scroll(function() {
 
  });
 
- $('#search-dropdown').click(function(e) { //button click class name is myDiv
+ $('#search-dropdown').click(function(e) {
     e.stopPropagation();
    })
   
    $(function(){
     $(document).click(function(){  
-    $('#search-dropdown').removeClass("show"); //hide the button
+    $('#search-dropdown').removeClass("show"); 
   
     });
   });

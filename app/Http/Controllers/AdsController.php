@@ -33,7 +33,7 @@ class AdsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new ad.
      *
      * @return \Illuminate\Http\Response
      */
@@ -56,12 +56,15 @@ class AdsController extends Controller
         //Hämtar summa som valts till välgörenhetsorganisation
         $charitySum = $ad->charitySum->sum;
 
-        // dd($ad->user);
-
         return view('ads.show', compact('ad', 'charitySum', 'charityName'));
     
     }
 
+    /**
+     * Fetches matching search words.
+     * @param string $search
+     * @return array 
+     */
     public function searchAutocomplete(Request $request)
     {
 
@@ -83,9 +86,13 @@ class AdsController extends Controller
     
     }
 
+    /**
+     * Fetches ads matching searchword.
+     * @param string $search
+     * @return view  
+     */
     public function showSearch(Request $request)
     {
-        // dd($request->search);
         $phrase = $request->input('search');
         $allAds = Ad::where('title', 'like', '%' . $phrase . '%')
         ->orWhere('brand', 'like', '%' . $phrase . '%')
@@ -107,6 +114,11 @@ class AdsController extends Controller
     
     }
 
+     /**
+     * Fetches ads matching the search word.
+     * @param string $phrase
+     * @return view  
+     */
     public function showSearchWord($phrase)
     {
 
@@ -130,6 +142,11 @@ class AdsController extends Controller
     
     }
 
+    /**
+     * Shows all ads added by $user.
+     * @param object $user
+     * @return view  
+     */
     public function showUser(User $user)
     {
 
@@ -143,7 +160,6 @@ class AdsController extends Controller
             }
             $charitySum[$ad->id] = $ad->charitySum->sum;
         }
-        // dd();
         return view('home.ads', compact('ads', 'charitySum', 'charityName'));
     
     }
@@ -248,7 +264,6 @@ class AdsController extends Controller
             'charity_id' => $request->input('charity'),
             'sum' => $request->input('charitySum')
         ]);
-
 
         return back()->with('status','Din annons är skapad!');
     }

@@ -12,7 +12,7 @@ function addClickListeners(buttons) {
   }
 
   function toggleWishList(e) {
-    //   console.log(e.target);
+
       e.target.innerHTML = "<span class='icons'>f</span>  Sparad som favorit";
   }
 

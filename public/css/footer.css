@@ -3,7 +3,7 @@ html {
     min-height: 100%;
   }
   body {
-    margin-bottom: 60px; /* Margin bottom by footer height */
+    margin-bottom: 60px;
   }
   .footer {
     position: absolute;
@@ -11,8 +11,8 @@ html {
     right: 0;
     bottom: 0;
     width: 100%;
-    height: 65px; /* Set the fixed height of the footer here */
-    line-height: 52px; /* Vertically center the text there */
+    height: 65px; 
+    line-height: 52px; 
     background-color: #ffebf4;
   }
 

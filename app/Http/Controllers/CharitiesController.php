@@ -28,17 +28,9 @@ class CharitiesController extends Controller
     
     }
 
-    public function showCharity(Charities $charities)
-    {
-
-        
-        return view('ads.show', compact('ads'));
-    
-    }
-
     public function showAdsInCharity(Charities $charities)
     {
-// Kod som hämtar annonser i en specifik organisation
+    // Hämtar annonser i en specifik organisation
         $ads = $charities->ads;
         $charityName = $charities->name;
 

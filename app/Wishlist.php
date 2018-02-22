@@ -12,13 +12,11 @@ class Wishlist extends Model
     public function user()
     {
         return $this->belongsTo('App\User');
-
     }
 
     public function ads()
     {
         return $this->belongsTo('App\Ad');
-
     }
 
 }

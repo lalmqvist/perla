@@ -14,12 +14,9 @@ class Ad extends Model
         return $this->belongsTo('App\User');
     }
 
-
     public function order()
     {
-        // return $this->belongsTo('App\Order');
         return $this->belongsToMany('App\Order', 'order_ads', 'ad_id', 'order_id');
-
     }
 
     public function ad_categories()
@@ -41,11 +38,6 @@ class Ad extends Model
     {
         return $this->hasMany('App\Img_ad');
     }
-
-    // public function wishlist()
-    // {
-    //     return $this->hasMany('App\Wishlist');
-    // }
 
     public function charitySum()
     {

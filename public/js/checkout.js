@@ -6,9 +6,7 @@ console.log('laddad');
 });
 
   function toggleDisplay(e) {
-      console.log(e.target);
       e.target.style.display = "none";
-    //   .d-none
   }
 
 
