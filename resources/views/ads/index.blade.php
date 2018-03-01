@@ -1,5 +1,5 @@
 @extends ('layouts.master')
-{{--  <link rel="stylesheet" href="/css/ads.css">  --}}
+<link rel="stylesheet" href="/css/ads.css">
 
 @if (isset($category))
 @section('title', $category->name)
@@ -11,11 +11,19 @@
 
 <div class="container-fluid">
     
-    @if (isset($category))
+    {{--  @if (isset($category))
     <h1>{{ $category->name }}</h1>
     @elseif (isset($charityName))
     <h1>{{ $charityName }}</h1>
+    @endif  --}}
+
+    @if (isset($pageHeading))
+    <h1>{{ $pageHeading }}</h1>
     @endif
+
+    <div class="row">
+        @include('partials.filter')
+    </div>
 
     <div class="row">
         
@@ -62,9 +70,17 @@
         </nav>
         @endif
 
-        <div class="card-columns col-md-10">
+        <div class="card-deck ads col-md-10">
             @foreach ($ads as $ad)
-            <div class="card text-center">
+            <div class="card ad-card text-center">
+                @auth
+                {{--  <div class="card-header">  --}}
+                    <button class="wish-button-index btn btn-outline-primary">
+                        <span class="icons">e</span>
+                    </button>
+                {{--  </div>  --}}
+                @endauth
+
                 <a href="/ads/{{ $ad->id }}">
                     <img class="card-img-top" src="../img/products/{{ $ad->thumb }}" alt="{{ $ad->title }}">
                 </a>
@@ -73,12 +89,12 @@
                     <h5 class="card-title">{{ $ad->title }}</h5>
                     <h5 class="card-title">{{ $ad->price }} kr</h5>
                     <p class="card-text">{{ $ad->brand }}<br></p>
-                    <a href="/addtocart/{{ $ad->id }}" class="btn btn-primary">Lägg i kundvagn</a>
+                    <a href="/addtocart/{{ $ad->id }}" class="btn btn-outline-primary">Lägg i kundvagn</a>
                     <a href="/addtowishlist/{{ $ad->id }}">
-                        <button class="wish-button-index btn btn-outline-primary">
+                        {{--  <button class="wish-button-index btn btn-outline-primary">
                             <span class="icons">e</span>
                             Spara som favorit
-                        </button>
+                        </button>  --}}
                     </a>
                 </div>
             </div>

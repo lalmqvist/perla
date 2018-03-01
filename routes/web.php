@@ -32,6 +32,7 @@ Route::get('/users', function () {
 
 Route::get('/ads', 'AdsController@index');
 Route::get('/ads/{ad}', 'AdsController@show');
+Route::post('/ads/filter', 'AdsController@showFilter');
 
 Route::post('/showSearch', 'AdsController@showSearch');
 Route::get('/showSearch/{phrase}', 'AdsController@showSearchWord');

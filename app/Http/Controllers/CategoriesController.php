@@ -25,7 +25,7 @@ class CategoriesController extends Controller
                 $ads[] = $ad;
             }
         }
-
-        return view('ads.index', compact('ads', 'category', 'subCategories'));
+        $pageHeading = $category->name;
+        return view('ads.index', compact('ads', 'category', 'subCategories', 'pageHeading'));
     }
 }

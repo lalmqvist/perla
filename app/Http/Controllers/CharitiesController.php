@@ -32,9 +32,9 @@ class CharitiesController extends Controller
     {
     // Hämtar annonser i en specifik organisation
         $ads = $charities->ads;
-        $charityName = $charities->name;
+        $pageHeading = 'Annonser inom '.$charities->name;
 
-        return view('ads.index', compact('ads', 'charityName'));
+        return view('ads.index', compact('ads', 'pageHeading'));
     
     }
     

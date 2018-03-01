@@ -159,6 +159,7 @@ div.fullScreen div.carousel-inner {
     color: #fff;
     background-color: #EF909E;
     border-color: #EF909E;
+    border-radius: 0;
 }
 
 .btn-outline-primary.disabled, .btn-outline-primary:disabled {
@@ -194,6 +195,7 @@ div.fullScreen div.carousel-inner {
     background-image: none;
     border-color: #EA5273;
     outline: none;
+    border-radius: 0;
 }
 
 .btn-outline-primary:not([disabled]):not(.disabled).active, .btn-outline-primary:not([disabled]):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
@@ -222,5 +224,53 @@ img.slide-img {
     max-width: 500px;
 }
 
+div.filter-container {
+    margin-bottom: 30px;
+    padding-top: 30px;
+    min-height: 100px;
+    
+}
 
+div.filter-flex {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
+}
+
+div.filter-container .dropdown-menu {
+    border-radius: 0;
+    max-height: 200px;
+    overflow: scroll;
+    width: 100px;
+}
+
+div.filter-container .dropdown-toggle {
+    min-width: 10rem;
+    border-radius: 0;
+    background-color: #fff;
+    color: #000;
+    margin: 5px;
+}
+
+div.filter-container label {
+    width: 100%;
+    text-align: left;
+    margin-right: 5px; 
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid #868e96;
+    border-radius: 0;
+}
+
+div.filter-container input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.btn-filter {
+    border-radius: 0;
+    min-width: 13rem;
+    margin: 5px;
+}

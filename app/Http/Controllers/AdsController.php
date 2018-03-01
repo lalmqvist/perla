@@ -29,7 +29,9 @@ class AdsController extends Controller
             }
         }
 
-        return view('ads.index', compact('ads', 'subCategories'));
+        $pageHeading = 'Alla annonser';
+
+        return view('ads.index', compact('ads', 'subCategories', 'pageHeading'));
     }
 
     /**
@@ -57,6 +59,71 @@ class AdsController extends Controller
         $charitySum = $ad->charitySum->sum;
 
         return view('ads.show', compact('ad', 'charitySum', 'charityName'));
+    
+    }
+
+    public function showFilter(Request $request)
+    {
+
+        // $filters = $request->all();
+        if ($request->input('brand')) {
+            $filter['brand'] = $request->input('brand');
+        }
+        if ($request->input('type')) {
+            $filter['type'] = $request->input('type');
+        }
+        if ($request->input('size')) {
+            $filter['size'] = $request->input('size');
+        }
+        if ($request->input('color')) {
+            $filter['color'] = $request->input('color');
+        }
+        
+        // dd($filter);
+
+        // $filteredAds = [];
+        $ads = [];
+        foreach ($filter as $key => $filterWords) {
+            // echo '<pre>' . $key . ':<br>';
+            // var_dump($filterWords);
+            
+            foreach ($filterWords as $filterWord) {
+                // echo 'Sök i kolumn ' . $key . ' efter ord ' . $filterWord . '<br>';
+                $filteredAds = Ad::where($key, 'like', '%' . $filterWord . '%')->get();
+                        
+                foreach ($filteredAds as $ad) {
+                        if ($ad->active && !in_array($ad, $ads)) {
+                        $ads[] = $ad;
+                    }
+                }
+
+            }
+        }
+
+        // dd($ads);
+        // var_dump($filteredAds);
+
+        // $ads = [];
+        // foreach ($filteredAds as $ad) {
+        //     echo '<br>' . $ad->id . '<br>';
+        //     if ($ad->active) {
+        //         $ads[] = $ad;
+        //     }
+        // }
+
+        // dd($request->all());
+
+        // $filteredAds = Ad::where('title', 'like', '%' . $phrase . '%')
+        // ->orWhere('brand', 'like', '%' . $phrase . '%')
+        // ->orWhere('type', 'like', '%' . $phrase . '%')
+        // ->orWhere('color', 'like', '%' . $phrase . '%')
+        // ->orWhere('material', 'like', '%' . $phrase . '%')
+        // ->orWhere('keywords', 'like', '%' . $phrase . '%')
+        // ->get();
+
+        
+
+        return view('ads.index', compact('ads'));
     
     }
 
@@ -109,8 +176,9 @@ class AdsController extends Controller
                 $ads[] = $ad;
             }
         }
+        $pageHeading = 'Sökresultat för ' . $phrase;
 
-        return view('ads.search', compact('ads', 'phrase'));
+        return view('ads.index', compact('ads', 'pageHeading'));
     
     }
 
@@ -137,8 +205,8 @@ class AdsController extends Controller
                 $ads[] = $ad;
             }
         }
-
-        return view('ads.search', compact('ads', 'phrase'));
+        $pageHeading = 'Sökresultat för ' . $phrase;
+        return view('ads.index', compact('ads', 'pageHeading'));
     
     }
 
