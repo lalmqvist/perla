@@ -20,4 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('search', 'AdsController@searchAutocomplete');
 
 Route::post('addtowishlist', 'WishlistController@store');
-Route::get('addtowishlist/{ad}', 'WishlistController@storeTest');
+Route::post('removefromwishlist', 'WishlistController@destroy');
+// Route::get('addtowishlist/{ad}', 'WishlistController@storeTest');

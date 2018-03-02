@@ -1,5 +1,5 @@
 window.addEventListener("load", function(){
-
+console.log('Search Laddad');
          // Add a keyup event listener to our input element
     var search_input = document.getElementById('search-field');
    
@@ -13,7 +13,7 @@ window.addEventListener("load", function(){
 
 // Autocomplete for search field 
 function hinter(event) {
-
+    console.log(event);
     // retireve the input element
     var input = event.target;
 

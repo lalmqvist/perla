@@ -10,20 +10,11 @@
 @section('content')
 
 <div class="container-fluid">
-    
-    {{--  @if (isset($category))
-    <h1>{{ $category->name }}</h1>
-    @elseif (isset($charityName))
-    <h1>{{ $charityName }}</h1>
-    @endif  --}}
+
 
     @if (isset($pageHeading))
     <h1>{{ $pageHeading }}</h1>
     @endif
-
-    <div class="row">
-        @include('partials.filter')
-    </div>
 
     <div class="row">
         
@@ -74,11 +65,15 @@
             @foreach ($ads as $ad)
             <div class="card ad-card text-center">
                 @auth
-                {{--  <div class="card-header">  --}}
-                    <button class="wish-button-index btn btn-outline-primary">
-                        <span class="icons">e</span>
+                @if (in_array($ad->id, $wishlist)) 
+                    <button class="wish-button-index full-heart btn btn-outline-primary icons" data-ad-id="{{ $ad->id }}" data-user-id="{{ Auth::user()->id }}">
+                        f
                     </button>
-                {{--  </div>  --}}
+                @else
+                    <button class="wish-button-index empty-heart btn btn-outline-primary icons" data-ad-id="{{ $ad->id }}" data-user-id="{{ Auth::user()->id }}">
+                        e
+                    </button>
+                @endif
                 @endauth
 
                 <a href="/ads/{{ $ad->id }}">
@@ -91,10 +86,6 @@
                     <p class="card-text">{{ $ad->brand }}<br></p>
                     <a href="/addtocart/{{ $ad->id }}" class="btn btn-outline-primary">Lägg i kundvagn</a>
                     <a href="/addtowishlist/{{ $ad->id }}">
-                        {{--  <button class="wish-button-index btn btn-outline-primary">
-                            <span class="icons">e</span>
-                            Spara som favorit
-                        </button>  --}}
                     </a>
                 </div>
             </div>
@@ -105,7 +96,7 @@
 </div>
 
 @section('pagescript')
-<script src="../js/ad.index.js"></script>
+<script src="../js/wishlist.index.js"></script>
 @stop
 
 @endsection

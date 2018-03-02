@@ -64,12 +64,6 @@
                 <button class="btn btn-primary btn-lg btn-block btn-custom">Lägg i kundvagn</button>
             </a>
 
-            @auth
-            <button id="wish-button" data-ad-id="{{ $ad->id }}" data-user-id="{{ Auth::user()->id }}" class="btn btn-outline-primary btn-lg btn-block btn-custom">
-                <span class="icons">e</span>
-                Spara som favorit
-            </button>
-            @endauth
         </div>
     </div>
 </div>

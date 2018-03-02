@@ -12,17 +12,19 @@
 div.card-deck.ads {
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-bottom: 40px;
 }
 
-/* div.card-deck.ads div.card.ad-card {
-  min-width: 22%;
-  margin: 1%;
-} */
+.container {
+  padding-bottom: 25px;
+
+}
 
 @media (max-width: 1199.98px) {
   div.card-deck.ads div.card.ad-card {
     min-width: 30%;
+    max-width: 30%;
     margin: 1%;
   }
   
@@ -35,17 +37,21 @@ div.card-deck.ads {
     }
     div.card-deck.ads div.card.ad-card {
       min-width: 30%;
+      max-width: 30%;
       margin: 1%;
     }
 
   }
 
 
-  @media (max-width: 800px) {
-    /* div.card-columns.ads {
-      column-count: 2;
-    } */
-  }
+  @media (max-width: 767.98px) { 
+    div.card-deck.ads div.card.ad-card {
+      min-width: 47%;
+      max-width: 47%;
+      margin: 1%;
+    }
+
+   }
 
   @media (max-width: 650.98px) { 
     #search-cards .card {
@@ -54,6 +60,7 @@ div.card-deck.ads {
     } 
     div.card-deck.ads div.card.ad-card {
       min-width: 47%;
+      max-width: 47%;
       margin: 1%;
     }
   }
@@ -64,16 +71,23 @@ div.card-deck.ads {
       max-width: 100%;
     }
 
+    div.card-deck.ads div.card.ad-card {
+      min-width: 98%;
+      max-width: 98%;
+      margin: 1%;
+    }
+
   }
 
   @media (min-width: 1199.98px) {
     div.card-deck.ads div.card.ad-card {
       min-width: 22%;
+      max-width: 22%;
       margin: 1%;
     }
   }
 
-button.wish-button-index {
+button.wish-button-index, button.wish-button-remove {
   border: none;
   position: absolute;
   top: 0;

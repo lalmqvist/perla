@@ -28,37 +28,33 @@
         </li>
     </ul>
 
-    <br><h3 class="text-center">Mina favoriter</h3>
-    <div class="card-group" id="search-cards">
-        
-        @foreach ($ads as $ad)
-        <div class="card text-center">
-            <a href="/ads/{{ $ad->id }}">
-                <img class="card-img-top" src="../img/products/{{ $ad->thumb }}" alt="{{ $ad->title }}">
-            </a>
-            <div class="card-body">
-                <h5 class="card-title">{{ $ad->title }}</h5>
-                <h5 class="card-title">{{ $ad->price }} kr</h5>
-                <p class="card-text">{{ $ad->brand }}<br></p>
-                <a href="/addtocart/{{ $ad->id }}" class="btn btn-primary">Lägg i kundvagn</a>
-                <button id="wish-button" data-ad-id="{{ $ad->id }}" data-user-id="{{ Auth::user()->id }}" class="d-none wish-button-index btn btn-outline-primary">
-                    <span class="icons">e</span>  
-                    Spara favorit
-                </button>
-
-                <button id="removewish" data-ad-id="{{ $ad->id }}" data-user-id="{{ Auth::user()->id }}" class="wish-button-index btn btn-outline-primary">
-                    <span class="icons">f</span>
-                      Ta bort favorit
-                </button>
+    <br><h3 class="text-center">Mina favoriter</h3>        
+        <div class="card-deck ads">
+                @foreach ($ads as $ad)
+                <div class="card ad-card text-center">
+                    <button class="wish-button-remove btn btn-outline-primary icons" data-ad-id="{{ $ad->id }}" data-user-id="{{ Auth::user()->id }}">c</button>
+                        
+                    <a href="/ads/{{ $ad->id }}">
+                        <img class="card-img-top" src="../img/products/{{ $ad->thumb }}" alt="{{ $ad->title }}">
+                    </a>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $ad->title }}</h5>
+                        <h5 class="card-title">{{ $ad->price }} kr</h5>
+                        <p class="card-text">{{ $ad->brand }}<br></p>
+                        <a href="/addtocart/{{ $ad->id }}" class="btn btn-outline-primary">Lägg i kundvagn</a>
+                        <a href="/addtowishlist/{{ $ad->id }}">
+                        </a>
+                    </div>
+                </div>
+                @endforeach
+    
             </div>
-        </div>
-        @endforeach
 
     </div>
-</div>
 
 @endsection
 
 @section('pagescript')
-<script src="../js/wishlist.js"></script>
+<script src="../js/wishlist.home.js"></script>
 @stop

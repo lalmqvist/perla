@@ -18,8 +18,14 @@ class WishlistController extends Controller
         $authUser = Auth::user();
         $user = User::find($authUser->id);
         $ads = $user->wishlistads;
+        $wishlistItems = $user->wishlist;
+        $wishlist = [];
 
-        return view('home.wishlist', compact('ads'));
+        foreach ($wishlistItems as $key => $item) {
+            $wishlist[] = $item->ad_id;
+        }
+
+        return view('home.wishlist', compact('ads', 'wishlist'));
     }
 
     /**
@@ -55,47 +61,23 @@ class WishlistController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Order $order)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Order  $order
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+    public function destroy(Request $request)
     {
-        //
+        Wishlist::where([
+            ['user_id', '=', $request->user_id],
+            ['ad_id', '=', $request->ad_id]
+        ])->delete();
+
+        $result = [
+            'user_id' => $request->user_id,
+            'ad_id' => $request->ad_id
+        ];
+        
+        return $result;
     }
 }
