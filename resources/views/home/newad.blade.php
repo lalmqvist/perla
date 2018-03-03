@@ -41,7 +41,7 @@
                     {{--  INPUT FÖR Titel  --}}
                     <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }} col-md-6">
                         <label for="title" class="control-label">Titel</label>
-                        <input id="title" type="text" class="form-control" name="title" value="" required autofocus>
+                        <input id="title" type="text" class="form-control" name="title" value="{{ old('title') }}" required autofocus>
 
                         @if ($errors->has('title'))
                         <span class="help-block">
@@ -56,7 +56,7 @@
                     {{--  INPUT FÖR PRIS  --}}
                     <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }} col-md-3">
                         <label for="price" class="control-label">Pris</label>
-                        <input id="price" type="text" class="form-control" name="price" value="" required>
+                        <input id="price" type="text" class="form-control" name="price" value="{{ old('price') }}" required>
 
                         @if ($errors->has('price'))
                         <span class="help-block">
@@ -71,7 +71,7 @@
                     {{--  INPUT FÖR TYPE  --}}
                     <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }} col-md-3">
                         <label for="type" class="control-label">Produkttyp</label>
-                        <input id="type" type="text" class="form-control" name="type" value="" required>
+                        <input id="type" type="text" class="form-control" name="type" value="{{ old('type') }}" required>
 
                         @if ($errors->has('type'))
                         <span class="help-block">
@@ -89,7 +89,7 @@
                     {{--  INPUT FÖR MÄRKE  --}}
                     <div class="form-group col-md-3">
                         <label for="brand">Märke</label>
-                        <input id="brand" type="text" class="form-control" name="brand">
+                        <input id="brand" type="text" class="form-control" name="brand" value"{{ old('brand') }}">
                         
                         @if ($errors->has('brand'))
                         <span class="help-block">
@@ -201,7 +201,7 @@
                     {{--  INPUT FÖR OTHER --}}
                     <div class="form-group{{ $errors->has('other') ? ' has-error' : '' }} col-md-6">
                         <label for="other" class="control-label">Övrig information</label>
-                        <input id="Other" type="text" class="form-control" name="other" value="">
+                        <input id="Other" type="text" class="form-control" name="other" value="{{ old('other') }}">
 
                         @if ($errors->has('other'))
                         <span class="help-block">
@@ -216,7 +216,7 @@
                     {{--  INPUT FÖR thumb  --}}
                     <div class="form-group{{ $errors->has('thumb') ? ' has-error' : '' }} col-md-6">
                         <label for="thumb" class="control-label">Bild 1 - förhandsvisning</label>
-                        <input id="thumb" type="file" class="form-control" name="thumb" value="" required>
+                        <input id="thumb" type="file" class="form-control" name="thumb" value="{{ old('thumb') }}" required>
 
                         @if ($errors->has('thumb'))
                         <span class="help-block">
@@ -234,7 +234,7 @@
                     {{--  INPUT FÖR IMG 2  --}}
                     <div class="form-group{{ $errors->has('img2') ? ' has-error' : '' }} col-md-6">
                         <label for="img2" class="control-label">Bild 2</label>
-                        <input id="img2" type="file" class="form-control" name="img2" required>
+                        <input id="img2" type="file" class="form-control" name="img2" value="{{ old('img2') }}" required>
 
                         @if ($errors->has('img2'))
                         <span class="help-block">
@@ -249,7 +249,7 @@
                     {{--  INPUT FÖR IMG 3  --}}
                     <div class="form-group{{ $errors->has('img3') ? ' has-error' : '' }} col-md-6">
                         <label for="img3" class="control-label">Bild 3</label>
-                        <input id="img3" type="file" class="form-control" name="img3" required>
+                        <input id="img3" type="file" class="form-control" name="img3" value="{{ old('img3') }}" required>
 
                         @if ($errors->has('img3'))
                         <span class="help-block">
