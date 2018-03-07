@@ -27,6 +27,10 @@ class CreateForeignKeysAdd extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('charity_fields', function (Blueprint $table) {
+                    
+            $table->dropForeign('charity_fields_field_id_foreign');
+            $table->dropForeign('charity_fields_charity_id_foreign');
+        });
     }
 }

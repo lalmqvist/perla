@@ -14,7 +14,7 @@ class CreateForeignKeys extends Migration
     public function up()
     {
 
-        Schema::table('ads_category', function (Blueprint $table) {
+        Schema::table('ads_categories', function (Blueprint $table) {
                     
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('ad_id')->references('id')->on('ads')->onDelete('cascade');
@@ -40,7 +40,6 @@ class CreateForeignKeys extends Migration
         Schema::table('orders', function (Blueprint $table) {
                     
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('seller_id')->references('id')->on('users')->onDelete('cascade');
         });
 
         Schema::table('ads', function (Blueprint $table) {
@@ -55,6 +54,41 @@ class CreateForeignKeys extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('ads_categories', function (Blueprint $table) {
+                    
+            $table->dropForeign('ads_categories_category_id_foreign');
+            $table->dropForeign('ads_categories_ad_id_foreign');
+        });
+
+        Schema::table('ads_charities', function (Blueprint $table) {
+                    
+            $table->dropForeign('ads_charities_ad_id_foreign');
+            $table->dropForeign('ads_charities_charity_id_foreign');
+
+        });
+
+        Schema::table('img_ads', function (Blueprint $table) {
+                    
+            $table->dropForeign('img_ads_ad_id_foreign');
+
+        });
+
+        Schema::table('order_ads', function (Blueprint $table) {
+                    
+            $table->dropForeign('order_ads_ad_id_foreign');
+            $table->dropForeign('order_ads_order_id_foreign');
+
+        });
+
+        Schema::table('orders', function (Blueprint $table) {
+                    
+            $table->dropForeign('orders_user_id_foreign');
+
+        });
+
+        Schema::table('ads', function (Blueprint $table) {
+            $table->dropForeign('ads_user_id_foreign');
+
+        });
     }
 }

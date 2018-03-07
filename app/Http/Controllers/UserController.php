@@ -19,20 +19,22 @@ class UserController extends Controller
         
         $orderSum = 0.0;
         $giftSum = 0.0;
+        $percentOrders = 0.0;
 
-        foreach ($orders as $order) {
-            $ads = $order->order_ads;
-            foreach ($ads as $ad) {
-                $orderSum = $orderSum + $ad->price;
-                $giftSum = $giftSum + $ad->gift;
+        if (count($orders) > 0) {
+            
+            foreach ($orders as $order) {
+                $ads = $order->order_ads;
+                foreach ($ads as $ad) {
+                    $orderSum = $orderSum + $ad->price;
+                    $giftSum = $giftSum + $ad->gift;
+                }
             }
-        }
-
+                    
+            $number = $giftSum / $orderSum;
+            $percentOrders = number_format($number, 2, '.', ',');
+    }
         $totalOrder = [];
-
-        $number = $giftSum / $orderSum;
-        $percentOrders = number_format($number, 2, '.', ',');
-        
         $totalOrder['orderSum'] = $orderSum;
         $totalOrder['giftSum'] = $giftSum;
         $totalOrder['percent'] = $percentOrders;
@@ -49,25 +51,27 @@ class UserController extends Controller
             ['active', '=', 0]
         ])->get();
 
-
         $adsSum = 0.0;
         $giftSum = 0.0;
+        $percentAds = 0.0;
 
-        foreach ($ads as $key => $ad) {
+        if (count($ads) > 0) {
+            foreach ($ads as $key => $ad) {
 
-            $percent = $ad->charitySum->sum * 0.01;
-            $price = $ad->price;
+                $percent = $ad->charitySum->sum * 0.01;
+                $price = $ad->price;
 
-            $charitySum = $price * $percent;
-           
-            $adsSum = $adsSum + $price;
-            $giftSum = $giftSum + $charitySum;
+                $charitySum = $price * $percent;
+            
+                $adsSum = $adsSum + $price;
+                $giftSum = $giftSum + $charitySum;
+            }
+            
+            
+            $number = $giftSum / $adsSum;
+            $percentAds = number_format($number, 2, '.', ',');
         }
-        
         $totalAds = [];
-        $number = $giftSum / $adsSum;
-        $percentAds = number_format($number, 2, '.', ',');
-
         $totalAds['adsSum'] = $adsSum;
         $totalAds['giftSum'] = $giftSum;
         $totalAds['percent'] = $percentAds;
