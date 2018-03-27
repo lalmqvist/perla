@@ -7,6 +7,8 @@ use App\Charities;
 use App\Field;
 use App\Charity_field;
 use App\Ad;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class CharitiesController extends Controller
 {
@@ -32,9 +34,22 @@ class CharitiesController extends Controller
     {
     // Hämtar annonser i en specifik organisation
         $ads = $charities->ads;
-        $pageHeading = 'Annonser inom '.$charities->name;
+        $pageHeading = 'Annonser för '.$charities->name;
 
-        return view('ads.index', compact('ads', 'pageHeading'));
+        $wishlist = [];
+
+        if (Auth::check()) {
+            $user = User::find(Auth::user()->id);
+        
+            $wishlistItems = $user->wishlist;
+            
+
+            foreach ($wishlistItems as $key => $item) {
+                $wishlist[] = $item->ad_id;
+            }
+        }
+
+        return view('ads.index', compact('ads', 'pageHeading', 'wishlist'));
     
     }
     

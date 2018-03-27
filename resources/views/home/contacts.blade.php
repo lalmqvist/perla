@@ -164,7 +164,6 @@
 
                     </div>
                 </div>
-            </form>
         </div>
     </div>
     
@@ -174,9 +173,11 @@
             <button type="submit" class="btn btn-primary btn-lg btn-block btn-cart">
                 Spara ändringar
             </button>
+            
         </div>
         <div class="col-md-3"></div>
     </div>
+    </form>
 </div>
 
 @endsection

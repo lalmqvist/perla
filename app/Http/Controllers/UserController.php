@@ -108,7 +108,7 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255',
             'phone' => 'required|string|max:255',
             'street1' => 'required|string|max:255',
-            'street2' => 'string|max:255',
+            'street2' => 'nullable|string|max:255',
             'zip' => 'required|string|max:255',
             'city' => 'required|string|max:255',
         ]);

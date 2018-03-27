@@ -44,14 +44,14 @@ div.marketing {
   }
 
   ul .nav-tabs .nav-link {
-    border: 1px solid pink;
+    border: 1px solid #ffff66;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
 
   }
 
   .nav-tabs {
-    border-bottom: 1px solid pink;
+    border-bottom: 1px solid #ffff66;
   }
  h4.progress-page {
     text-align: center;
@@ -73,7 +73,7 @@ div.marketing {
   }
 
 #progress-page {
-    background-color: #ffebf4dc;
+    background-color: #FFFFE7;
     margin-right: 10%;
     margin-left: 10%;
     margin-top: 20px;

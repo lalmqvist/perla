@@ -12,7 +12,7 @@
     --white: #fff;
     --gray: #868e96;
     --gray-dark: #343a40;
-    --primary: #EF909E;
+    --primary: #ffff66;
     --secondary: #868e96;
     --success: #28a745;
     --info: #17a2b8;
@@ -29,13 +29,17 @@
 
 body {
     margin: 0;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 300;
     font-size: 1.1rem;
-    background-image: url('../img/bg_1.png');
+    background-image: url('../img/bg_3.jpg');
     background-size: 100%;
     background-repeat: repeat-y;
     background-attachment: fixed;
+    /* background-image: url('../img/2color.png');
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-size: 225px; */
     padding-right: 15px;
     padding-left: 15px;
     
@@ -84,13 +88,13 @@ main#main-container {
 }
 
 h1 {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 300;
     text-align: center;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
 
 }
 
@@ -103,9 +107,6 @@ p.ad-info {
     margin-bottom: 0;
 }
 
-a {
-    color: #60B8CC;
-}
 
 img.small-img {
     width: 100%;
@@ -157,55 +158,55 @@ div.fullScreen div.carousel-inner {
 
 .btn-primary {
     color: #fff;
-    background-color: #EF909E;
-    border-color: #EF909E;
+    background-color: #323232;
+    border-color: #323232;
     border-radius: 0;
 }
 
 .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-    color: #EF909E;
+    color: #ffe500;
     background-color: transparent;
 }
 
 .btn-primary:hover, .btn-primary:focus {
     color: #fff;
-    background-color: #EA5273;
-    border-color: #EA5273;
+    background-color: #323232;
+    border-color: #323232;
     outline: none;
     box-shadow: none;
 }
 
 .btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #EA5273;
-    border-color: #EA5273;
+    background-color: #323232;
+    border-color: #323232;
     outline: none;
     box-shadow: none;
 }
 
 .btn-outline-primary {
-    color: #EA5273;
+    color: #323232;
     background-color: transparent;
     background-image: none;
-    border-color: #EA5273;
+    border-color: #323232;
     outline: none;
     border-radius: 0;
 }
 
 .btn-outline-primary:not([disabled]):not(.disabled).active, .btn-outline-primary:not([disabled]):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
     text-decoration: none;
-    color: #EA5273;
+    color: #323232;
     background-color: transparent;
-    border-color: #EA5273;
+    border-color: #323232;
     box-shadow: none;
     outline: none;
 }
 
 .btn-outline-primary:hover {
     text-decoration: none;
-    color: #EA5273;
+    color: #323232;
     background-color: transparent;
-    border-color: #EA5273;
+    border-color: #323232;
     box-shadow: none;
 }
 
@@ -268,3 +269,16 @@ div.filter-container input[type="checkbox"] {
     min-width: 13rem;
     margin: 5px;
 }
+
+@media (max-width: 767.98px) { 
+
+	div.container {
+        min-height: 100px;
+    }
+
+    div.product-show-info {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+
+ }

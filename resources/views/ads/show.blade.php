@@ -5,11 +5,11 @@
 <div class="container product-container">
     
     <div class="row">
-        <div class="col">
+        <div class="col-12 col-md-8">
             <div class="container" id="img-container">
                 
                 <div class="row">
-                    <div class="col">
+                    <div class="col-12">
                         <img id="large-img" src="../img/products/{{$ad->images[0]->img}}">
                     </div>
                 </div>
@@ -26,11 +26,11 @@
             </div>
         </div>
 
-        <div class="col-4">
+        <div class="col-12 col-md-4 product-show-info">
             <h2 class="ad-title">{{$ad->title}}</h2>
             <h2 class="ad-price">{{$ad->price}} kr</h2>
-            <h5>{{$charitySum}}% av summan går till <a href="#">{{$charityName}}</a></h5>
-            <p>Säljare: <a href="#">{{$ad->user->fname}} {{$ad->user->lname}}</a></p>
+            <h5>{{$charitySum}}% av summan går till {{$charityName}}</h5>
+            <p>Säljare: {{$ad->user->fname}} {{$ad->user->lname}}</p>
 
             @if (strlen($ad->brand) >= 1)
             <p class="ad-info"><b>Märke:</b> {{$ad->brand}}</p>
