@@ -23,6 +23,7 @@ This project contains a e-commerce ad site built with the framework Laravel 5.6.
 + [Composer](https://getcomposer.org/download)
 + [Laravel](https://laravel.com/docs/5.6)
 + [Eloquent ORM](https://laravel.com/docs/5.6/eloquent)
++ [jQuery ^3.3.1](http://jquery.com/download/)
 
 Check dependencies in terminal with the following commands:
 ```
@@ -45,5 +46,7 @@ If any of them doesn't return a version number you need to install those before 
 6. To migrate database tables, run `php artisan migrate`
 7. If you want to rollback migrations, run `php artisan migrate:fresh`
 
-
+### Testuser
+e-mail: test@testmail.com
+psw: password
 
