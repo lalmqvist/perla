@@ -1,8 +1,8 @@
-# Perla
-your own charity shop
+# Perla - your own charity shop
 
-[Live project](http://perla.lindaalmqvist.se/)
+[PERLA - Live project](http://perla.lindaalmqvist.se/)
 
+***
 
 This project contains a e-commerce ad site built with the framework Laravel 5.6.
 
